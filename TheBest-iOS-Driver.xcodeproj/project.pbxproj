@@ -3,29 +3,67 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AA3D2925252771740083FD54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2924252771740083FD54 /* AppDelegate.swift */; };
 		AA3D2927252771740083FD54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2926252771740083FD54 /* SceneDelegate.swift */; };
-		AA3D2929252771740083FD54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2928252771740083FD54 /* ViewController.swift */; };
+		AA3D2929252771740083FD54 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2928252771740083FD54 /* LoginVC.swift */; };
 		AA3D292C252771740083FD54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3D292A252771740083FD54 /* Main.storyboard */; };
 		AA3D292F252771740083FD54 /* TheBest_iOS_Driver.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3D292D252771740083FD54 /* TheBest_iOS_Driver.xcdatamodeld */; };
 		AA3D2931252771770083FD54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2930252771770083FD54 /* Assets.xcassets */; };
 		AA3D2934252771770083FD54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2932252771770083FD54 /* LaunchScreen.storyboard */; };
+		AA3D2949252774760083FD54 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D293F252774730083FD54 /* Lato-BlackItalic.ttf */; };
+		AA3D294A252774760083FD54 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2940252774730083FD54 /* Lato-Black.ttf */; };
+		AA3D294B252774760083FD54 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2941252774740083FD54 /* Lato-Regular.ttf */; };
+		AA3D294C252774760083FD54 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2942252774740083FD54 /* Lato-Thin.ttf */; };
+		AA3D294D252774760083FD54 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2943252774740083FD54 /* Lato-Light.ttf */; };
+		AA3D294E252774760083FD54 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2944252774750083FD54 /* Lato-Bold.ttf */; };
+		AA3D294F252774760083FD54 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2945252774750083FD54 /* Lato-LightItalic.ttf */; };
+		AA3D2950252774760083FD54 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2946252774750083FD54 /* Lato-ThinItalic.ttf */; };
+		AA3D2951252774760083FD54 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2947252774760083FD54 /* Lato-Italic.ttf */; };
+		AA3D2952252774760083FD54 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2948252774760083FD54 /* Lato-BoldItalic.ttf */; };
+		AA3D2959252775380083FD54 /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2953252775370083FD54 /* CustomViews.swift */; };
+		AA3D295A252775380083FD54 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2954252775370083FD54 /* Images.swift */; };
+		AA3D295B252775380083FD54 /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2955252775370083FD54 /* Drawer.swift */; };
+		AA3D295C252775380083FD54 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2956252775370083FD54 /* Alert.swift */; };
+		AA3D295D252775380083FD54 /* SetupPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2957252775380083FD54 /* SetupPicker.swift */; };
+		AA3D295E252775380083FD54 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2958252775380083FD54 /* Gradient.swift */; };
+		AA3D296125277BCB0083FD54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA3D296025277BCB0083FD54 /* GoogleService-Info.plist */; };
+		D9162586707446DDCCE18E03 /* Pods_TheBest_iOS_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7CAB46C20E910D6CF66A88 /* Pods_TheBest_iOS_Driver.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B90ED3A8A644E837F39195F /* Pods-TheBest-iOS-Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBest-iOS-Driver.release.xcconfig"; path = "Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver.release.xcconfig"; sourceTree = "<group>"; };
+		5D7CAB46C20E910D6CF66A88 /* Pods_TheBest_iOS_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheBest_iOS_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91F95078B49ED869431025FA /* Pods-TheBest-iOS-Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBest-iOS-Driver.debug.xcconfig"; path = "Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3D2921252771740083FD54 /* TheBest-iOS-Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheBest-iOS-Driver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3D2924252771740083FD54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3D2926252771740083FD54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AA3D2928252771740083FD54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA3D2928252771740083FD54 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		AA3D292B252771740083FD54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA3D292E252771740083FD54 /* TheBest_iOS_Driver.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheBest_iOS_Driver.xcdatamodel; sourceTree = "<group>"; };
 		AA3D2930252771770083FD54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3D2933252771770083FD54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA3D2935252771770083FD54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA3D293F252774730083FD54 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		AA3D2940252774730083FD54 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		AA3D2941252774740083FD54 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		AA3D2942252774740083FD54 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		AA3D2943252774740083FD54 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		AA3D2944252774750083FD54 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		AA3D2945252774750083FD54 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		AA3D2946252774750083FD54 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		AA3D2947252774760083FD54 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		AA3D2948252774760083FD54 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AA3D2953252775370083FD54 /* CustomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
+		AA3D2954252775370083FD54 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		AA3D2955252775370083FD54 /* Drawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
+		AA3D2956252775370083FD54 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		AA3D2957252775380083FD54 /* SetupPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPicker.swift; sourceTree = "<group>"; };
+		AA3D2958252775380083FD54 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		AA3D296025277BCB0083FD54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +71,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9162586707446DDCCE18E03 /* Pods_TheBest_iOS_Driver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A728EF6E5FB3FE28C1E49E4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D7CAB46C20E910D6CF66A88 /* Pods_TheBest_iOS_Driver.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA3D2918252771740083FD54 = {
 			isa = PBXGroup;
 			children = (
 				AA3D2923252771740083FD54 /* TheBest-iOS-Driver */,
 				AA3D2922252771740083FD54 /* Products */,
+				EE321762839E3FF509DB94B4 /* Pods */,
+				A728EF6E5FB3FE28C1E49E4A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +107,130 @@
 		AA3D2923252771740083FD54 /* TheBest-iOS-Driver */ = {
 			isa = PBXGroup;
 			children = (
-				AA3D2924252771740083FD54 /* AppDelegate.swift */,
-				AA3D2926252771740083FD54 /* SceneDelegate.swift */,
-				AA3D2928252771740083FD54 /* ViewController.swift */,
-				AA3D292A252771740083FD54 /* Main.storyboard */,
-				AA3D2930252771770083FD54 /* Assets.xcassets */,
-				AA3D2932252771770083FD54 /* LaunchScreen.storyboard */,
-				AA3D2935252771770083FD54 /* Info.plist */,
-				AA3D292D252771740083FD54 /* TheBest_iOS_Driver.xcdatamodeld */,
+				AA3D293B252773640083FD54 /* Configurations */,
+				AA3D293C252773BB0083FD54 /* Storyboards */,
+				AA3D29AC252782D10083FD54 /* Scenes */,
+				AA3D295F252775460083FD54 /* UI-Helpers */,
+				AA3D293D252773DA0083FD54 /* Utilities */,
 			);
 			path = "TheBest-iOS-Driver";
+			sourceTree = "<group>";
+		};
+		AA3D293B252773640083FD54 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				AA3D2924252771740083FD54 /* AppDelegate.swift */,
+				AA3D2926252771740083FD54 /* SceneDelegate.swift */,
+				AA3D296025277BCB0083FD54 /* GoogleService-Info.plist */,
+				AA3D2935252771770083FD54 /* Info.plist */,
+				AA3D2930252771770083FD54 /* Assets.xcassets */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		AA3D293C252773BB0083FD54 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AA3D2932252771770083FD54 /* LaunchScreen.storyboard */,
+				AA3D292A252771740083FD54 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AA3D293D252773DA0083FD54 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AA3D293E2527741F0083FD54 /* Fonts */,
+				AA3D292D252771740083FD54 /* TheBest_iOS_Driver.xcdatamodeld */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AA3D293E2527741F0083FD54 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AA3D2940252774730083FD54 /* Lato-Black.ttf */,
+				AA3D293F252774730083FD54 /* Lato-BlackItalic.ttf */,
+				AA3D2944252774750083FD54 /* Lato-Bold.ttf */,
+				AA3D2948252774760083FD54 /* Lato-BoldItalic.ttf */,
+				AA3D2947252774760083FD54 /* Lato-Italic.ttf */,
+				AA3D2943252774740083FD54 /* Lato-Light.ttf */,
+				AA3D2945252774750083FD54 /* Lato-LightItalic.ttf */,
+				AA3D2941252774740083FD54 /* Lato-Regular.ttf */,
+				AA3D2942252774740083FD54 /* Lato-Thin.ttf */,
+				AA3D2946252774750083FD54 /* Lato-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AA3D295F252775460083FD54 /* UI-Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AA3D2956252775370083FD54 /* Alert.swift */,
+				AA3D2953252775370083FD54 /* CustomViews.swift */,
+				AA3D2955252775370083FD54 /* Drawer.swift */,
+				AA3D2958252775380083FD54 /* Gradient.swift */,
+				AA3D2954252775370083FD54 /* Images.swift */,
+				AA3D2957252775380083FD54 /* SetupPicker.swift */,
+			);
+			path = "UI-Helpers";
+			sourceTree = "<group>";
+		};
+		AA3D29AC252782D10083FD54 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AA3D29AE252785250083FD54 /* Login+Register */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		AA3D29AE252785250083FD54 /* Login+Register */ = {
+			isa = PBXGroup;
+			children = (
+				AA3D29AF252785310083FD54 /* Login */,
+			);
+			path = "Login+Register";
+			sourceTree = "<group>";
+		};
+		AA3D29AF252785310083FD54 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AA3D29B22527854A0083FD54 /* Interactor */,
+				AA3D29B12527853F0083FD54 /* Presenter */,
+				AA3D29B0252785370083FD54 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AA3D29B0252785370083FD54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AA3D2928252771740083FD54 /* LoginVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AA3D29B12527853F0083FD54 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AA3D29B22527854A0083FD54 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		EE321762839E3FF509DB94B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91F95078B49ED869431025FA /* Pods-TheBest-iOS-Driver.debug.xcconfig */,
+				1B90ED3A8A644E837F39195F /* Pods-TheBest-iOS-Driver.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA3D2938252771770083FD54 /* Build configuration list for PBXNativeTarget "TheBest-iOS-Driver" */;
 			buildPhases = (
+				1EB6BAAB68BACB80F7093E80 /* [CP] Check Pods Manifest.lock */,
 				AA3D291D252771740083FD54 /* Sources */,
 				AA3D291E252771740083FD54 /* Frameworks */,
 				AA3D291F252771740083FD54 /* Resources */,
+				BC435BFB285794D863A695B3 /* [CP] Embed Pods Frameworks */,
+				6347D1DD365C7FBFDAA38E1E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -128,23 +294,99 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3D2949252774760083FD54 /* Lato-BlackItalic.ttf in Resources */,
+				AA3D294F252774760083FD54 /* Lato-LightItalic.ttf in Resources */,
+				AA3D294B252774760083FD54 /* Lato-Regular.ttf in Resources */,
+				AA3D294C252774760083FD54 /* Lato-Thin.ttf in Resources */,
+				AA3D296125277BCB0083FD54 /* GoogleService-Info.plist in Resources */,
 				AA3D2934252771770083FD54 /* LaunchScreen.storyboard in Resources */,
 				AA3D2931252771770083FD54 /* Assets.xcassets in Resources */,
+				AA3D294A252774760083FD54 /* Lato-Black.ttf in Resources */,
+				AA3D2950252774760083FD54 /* Lato-ThinItalic.ttf in Resources */,
 				AA3D292C252771740083FD54 /* Main.storyboard in Resources */,
+				AA3D294E252774760083FD54 /* Lato-Bold.ttf in Resources */,
+				AA3D2951252774760083FD54 /* Lato-Italic.ttf in Resources */,
+				AA3D294D252774760083FD54 /* Lato-Light.ttf in Resources */,
+				AA3D2952252774760083FD54 /* Lato-BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EB6BAAB68BACB80F7093E80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheBest-iOS-Driver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6347D1DD365C7FBFDAA38E1E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC435BFB285794D863A695B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA3D291D252771740083FD54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA3D2929252771740083FD54 /* ViewController.swift in Sources */,
+				AA3D2929252771740083FD54 /* LoginVC.swift in Sources */,
+				AA3D295A252775380083FD54 /* Images.swift in Sources */,
 				AA3D2925252771740083FD54 /* AppDelegate.swift in Sources */,
+				AA3D2959252775380083FD54 /* CustomViews.swift in Sources */,
 				AA3D2927252771740083FD54 /* SceneDelegate.swift in Sources */,
+				AA3D295E252775380083FD54 /* Gradient.swift in Sources */,
 				AA3D292F252771740083FD54 /* TheBest_iOS_Driver.xcdatamodeld in Sources */,
+				AA3D295C252775380083FD54 /* Alert.swift in Sources */,
+				AA3D295D252775380083FD54 /* SetupPicker.swift in Sources */,
+				AA3D295B252775380083FD54 /* Drawer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,10 +528,12 @@
 		};
 		AA3D2939252771770083FD54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91F95078B49ED869431025FA /* Pods-TheBest-iOS-Driver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "TheBest-iOS-Driver/Info.plist";
+				DEVELOPMENT_TEAM = P675879D6G;
+				INFOPLIST_FILE = "TheBest-iOS-Driver/Configurations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,16 +541,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thebest.TheBest-iOS-Driver";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		AA3D293A252771770083FD54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B90ED3A8A644E837F39195F /* Pods-TheBest-iOS-Driver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "TheBest-iOS-Driver/Info.plist";
+				DEVELOPMENT_TEAM = P675879D6G;
+				INFOPLIST_FILE = "TheBest-iOS-Driver/Configurations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,7 +560,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.thebest.TheBest-iOS-Driver";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
