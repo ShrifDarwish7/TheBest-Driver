@@ -25,4 +25,11 @@ class Router{
         sender.present(vc, animated: true, completion: nil)
     }
     
+    static func toHome(_ sender: UIViewController){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+        vc.modalPresentationStyle = .fullScreen
+        sender.present(vc, animated: true, completion: nil)
+    }
+    
 }

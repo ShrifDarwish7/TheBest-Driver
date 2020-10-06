@@ -35,6 +35,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
+        Router.toHome(self)
     }
     
     @IBAction func signupAction(_ sender: Any) {
