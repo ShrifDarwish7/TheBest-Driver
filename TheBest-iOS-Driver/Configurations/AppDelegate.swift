@@ -32,21 +32,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setDefaultAnimationType(.flat)
         SVProgressHUD.setBackgroundColor(.white)
         
-//        if #available(iOS 13.0, *){
-//
-//        }else{
-//            if AuthServices.instance.isLogged {
-//
-//                let rootViewController: UIWindow = ((UIApplication.shared.delegate?.window)!)!
-//                if AuthServices.instance.isLogged{
-//                    let mainStoryboard = UIStoryboard(name: "Main" , bundle: nil)
-//                    let protectedPage = mainStoryboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-//                    rootViewController.rootViewController = protectedPage
-//                    window!.makeKeyAndVisible()
-//                }
-//
-//            }
-//        }
+        if #available(iOS 13.0, *){
+
+        }else{
+            if AuthServices.instance.isLogged {
+
+                let rootViewController: UIWindow = ((UIApplication.shared.delegate?.window)!)!
+                if AuthServices.instance.isLogged{
+                    let mainStoryboard = UIStoryboard(name: "Main" , bundle: nil)
+                    let protectedPage = mainStoryboard.instantiateViewController(withIdentifier: "NavHome") as! UINavigationController
+                    rootViewController.rootViewController = protectedPage
+                    window!.makeKeyAndVisible()
+                }
+
+            }
+        }
         
         return true
     }

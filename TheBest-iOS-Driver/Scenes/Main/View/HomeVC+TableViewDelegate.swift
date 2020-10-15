@@ -23,13 +23,13 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return self.orders!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "IncomingOrderTableViewCell", for: indexPath) as! IncomingOrderTableViewCell
-        cell.loadUI()
+        cell.loadFrom(self.orders![indexPath.row])
         return cell
         
     }

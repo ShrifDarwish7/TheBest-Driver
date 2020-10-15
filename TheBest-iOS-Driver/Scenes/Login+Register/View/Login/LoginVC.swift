@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class LoginVC: UIViewController {
 
@@ -18,11 +19,14 @@ class LoginVC: UIViewController {
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var signupBtn: UIButton!
     
+    var authPresenter: AuthPresenter?
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        authPresenter = AuthPresenter(authViewDelegate: self)
         loadUI()
-        
+        requestLocationPermission()
     }
     
     func loadUI(){
@@ -35,11 +39,27 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: Any) {
-        Router.toHome(self)
+        guard !self.usernameTF.text!.isEmpty, !self.passTF.text!.isEmpty else {
+            showAlert(title: "", message: "Please enter your email and password")
+            return
+        }
+        self.authPresenter?.loginWith(email: self.usernameTF.text!, password: self.passTF.text!, fcmToken: "")
     }
     
     @IBAction func signupAction(_ sender: Any) {
         Router.toSignUp(self)
+    }
+    
+    func requestLocationPermission(){
+        
+        locationManager.requestAlwaysAuthorization()
+            
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            locationManager.startUpdatingLocation()
+        }
+        
     }
     
 }

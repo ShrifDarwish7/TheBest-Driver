@@ -21,11 +21,17 @@ class HomeVC: UIViewController {
     @IBOutlet weak var allowBtn: UIButton!
     @IBOutlet weak var denyBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyLbl: UILabel!
     
     let locationManager = CLLocationManager()
+    var mainPresenter: MainPresenter?
+    var orders: [MyOrder]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainPresenter = MainPresenter(self)
+        mainPresenter?.getMyOrders()
         
         NotificationCenter.default.addObserver(self, selector: #selector(closeDrawer), name: NSNotification.Name(rawValue: "CloseDrawer"), object: nil)
         
@@ -49,9 +55,7 @@ class HomeVC: UIViewController {
             self.blurBlockView.isHidden = true
             self.popupView.transform = CGAffineTransform(scaleX: 0, y: 0    )
         }
-        
-        self.loadTableFromNib()
-        
+                
     }
     @objc func closeDrawer(){
         Drawer.close(drawerPosition, self)

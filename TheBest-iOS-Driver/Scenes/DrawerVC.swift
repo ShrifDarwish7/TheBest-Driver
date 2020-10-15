@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DrawerVC: UIViewController {
 
@@ -28,6 +29,9 @@ class DrawerVC: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(showBlockView), name: NSNotification.Name("opened"), object: nil)
         
+        username.text = AuthServices.instance.user.name
+        profileImage.sd_setImage(with: URL(string: AuthServices.instance.user.hasImage ?? ""))
+        
         blockView.addTapGesture { (_) in
             
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CloseDrawer"), object: nil)
@@ -44,49 +48,17 @@ class DrawerVC: UIViewController {
             
         }
         
-       // username.text = AuthServices.instance.user.name
         
         logout.addTapGesture { (_) in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CloseDrawer"), object: nil)
+            AuthServices.instance.isLogged = false
             Router.toLoginVC(self)
-           // AuthServices.instance.isLogged = false
         }
         
     }
     
-//    func loadActions(){
-//
-//        lastOrders.addTapGesture { (_) in
-//            Router.toLastOrders(sender: self)
-//        }
-//
-//        home.addTapGesture { (_) in
-//            Router.toHome(self)
-//        }
-//
-//        howToUse.addTapGesture { (_) in
-//            Router.toHowToUse(sender: self)
-//        }
-//
-//        share.addTapGesture { (_) in
-//            Router.toShare(sender: self)
-//        }
-//
-//        profileImage.addTapGesture { (_) in
-//            Router.toProfile(sender: self)
-//        }
-//
-//        balance.addTapGesture { (_) in
-//            Router.toBalance(sender: self)
-//        }
-//
-//        aboutUs.addTapGesture { (_) in
-//            Router.toTerms(sender: self)
-//        }
-//
-//    }
-    
     @objc func showBlockView(){
-        UIView.animate(withDuration: 0.2, delay: 0.35, options: [], animations: {
+        UIView.animate(withDuration: 0.2, delay: 0.2, options: [], animations: {
              self.blockView.alpha = 0.5
         }) { (_) in
             

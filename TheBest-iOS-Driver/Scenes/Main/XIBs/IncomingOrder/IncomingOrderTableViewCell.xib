@@ -231,6 +231,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="acceptBtn" destination="MwP-SD-QM8" id="KMX-Nh-UmW"/>
+                <outlet property="addressFrom" destination="x07-hg-TLF" id="vJH-FX-ItH"/>
+                <outlet property="addressTo" destination="bfM-Ca-S7A" id="GJL-W7-xVx"/>
                 <outlet property="containerView" destination="MNX-zS-56G" id="1Ih-Kd-Nqz"/>
                 <outlet property="denyBtn" destination="1kv-k7-2IK" id="o45-a9-Tpr"/>
                 <outlet property="fromView" destination="3SX-7a-AhI" id="qLh-Ub-CFR"/>
@@ -238,6 +240,7 @@
                 <outlet property="statusView" destination="3gL-Af-dc4" id="XYQ-Lc-0s5"/>
                 <outlet property="toView" destination="p1X-9v-iJB" id="CFQ-0U-ycQ"/>
                 <outlet property="topView" destination="bmX-kY-WO8" id="e8D-SA-gzX"/>
+                <outlet property="total" destination="eT8-vW-LyN" id="rHc-uV-iUO"/>
                 <outlet property="vendorView" destination="Qvz-vc-EmL" id="DKt-sG-cce"/>
             </connections>
             <point key="canvasLocation" x="185.50724637681162" y="186.49553571428569"/>

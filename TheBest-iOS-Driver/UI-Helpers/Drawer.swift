@@ -9,7 +9,7 @@ class Drawer{
                 
         
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             
             constraint.constant = 0
             vc.view.layoutIfNeeded()
@@ -24,7 +24,7 @@ class Drawer{
     static func close(_ constraint: NSLayoutConstraint, _ vc: UIViewController){
         
         
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             
             constraint.constant = vc.view.frame.width
             vc.view.layoutIfNeeded()

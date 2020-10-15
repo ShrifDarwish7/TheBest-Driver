@@ -19,6 +19,9 @@ class IncomingOrderTableViewCell: UITableViewCell {
     @IBOutlet weak var acceptBtn: UIButton!
     @IBOutlet weak var denyBtn: UIButton!
     @IBOutlet weak var statusLbl: UILabel!
+    @IBOutlet weak var addressFrom: UILabel!
+    @IBOutlet weak var addressTo: UILabel!
+    @IBOutlet weak var total: UILabel!
     
     func loadUI(){
         containerView.setupShadow()
@@ -33,6 +36,14 @@ class IncomingOrderTableViewCell: UITableViewCell {
         vendorView.layer.cornerRadius = 15
         statusLbl.layer.cornerRadius = 10
         topView.layer.cornerRadius = 15
+    }
+    
+    func loadFrom(_ order: MyOrder){
+        loadUI()
+        statusLbl.text = order.status
+        addressFrom.text = order.addressFrom
+        addressTo.text = order.addressTo
+        total.text = "\(order.total)" + " " + "KWD"
     }
     
 }
