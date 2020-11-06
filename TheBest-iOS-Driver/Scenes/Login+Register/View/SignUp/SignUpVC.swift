@@ -12,32 +12,42 @@ import Closures
 class SignUpVC: UIViewController , UIGestureRecognizerDelegate{
 
     @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var signupBtn: UIButton!
     @IBOutlet var customTFs: [UITextField]!
     @IBOutlet var customViews: [UIView]!
-    @IBOutlet weak var tf: UITextField!
-    @IBOutlet weak var carIcon: UIView!
-    @IBOutlet weak var carPic: UIImageView!
     @IBOutlet weak var sendRequest: UIButton!
-    @IBOutlet weak var idCardOption1: UIButton!
-    @IBOutlet weak var idCardOption2: UIButton!
+    @IBOutlet weak var ssidFront: UIButton!
+    @IBOutlet weak var ssidBack: UIButton!
     @IBOutlet weak var passportOption1: UIButton!
-    @IBOutlet weak var driverLicenseOption1: UIButton!
-    @IBOutlet weak var carSlinderOption1: UIButton!
-    @IBOutlet weak var chooseTaxiBtn: UIButton!
-    @IBOutlet var checkIcons: [UIImageView]!
+    @IBOutlet weak var imageCert: UIButton!
     @IBOutlet weak var chooseCollection: UICollectionView!
     @IBOutlet weak var agreeCheck: UIImageView!
     @IBOutlet weak var payTypeChooseCollection: UICollectionView!
+    @IBOutlet weak var nameTF: UITextField!
+    @IBOutlet weak var emailTF: UITextField!
+    @IBOutlet weak var passTF: UITextField!
+    @IBOutlet weak var phoneTf: UITextField!
+    @IBOutlet weak var phoneIntrakTF: UITextField!
+    @IBOutlet weak var addressTF: UITextField!
+    @IBOutlet weak var ssidDriverTF: UITextField!
+    @IBOutlet weak var pageTitle: UILabel!
     
     var options = [Option]()
     var payOptions = [Option]()
+    var selectedSSIDFront: UIImage?
+    var selectedSSIDBack: UIImage?
+    var selectedPassport: UIImage?
+    var selectedImageCert: UIImage?
+    var selectedProfileImage: UIImage?
+    var authPresenter: AuthPresenter?
+    var viewState: ViewState = .Register
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        
+        authPresenter = AuthPresenter(authViewDelegate: self)
         
         options.append(Option(id: "", title: "Taxi", selected: false))
         options.append(Option(id: "", title: "Restaurant", selected: false))
@@ -91,12 +101,33 @@ class SignUpVC: UIViewController , UIGestureRecognizerDelegate{
             return CGSize(width: self.payTypeChooseCollection.frame.width/3+10, height: 50)
         }
         
+        switch viewState {
+        case .Update:
+            
+            pageTitle.text = "My Profile"
+            sendRequest.setTitle("Update Profile", for: .normal)
+            passTF.isHidden = true
+            nameTF.text = AuthServices.instance.profile.name
+            emailTF.text = AuthServices.instance.profile.email
+            addressTF.text = AuthServices.instance.profile.address
+            phoneTf.text = AuthServices.instance.profile.phone
+            ssidDriverTF.text = AuthServices.instance.profile.ssidDriver
+            phoneIntrakTF.text = AuthServices.instance.profile.phoneIntreal
+            profileImage.sd_setImage(with: URL(string: AuthServices.instance.profile.hasImage ?? ""))
+            ssidFront.sd_setImage(with: URL(string: AuthServices.instance.profile.ssidfront ?? ""), for: .normal)
+            ssidBack.sd_setImage(with: URL(string: AuthServices.instance.profile.ssidback ?? ""), for: .normal)
+            passportOption1.sd_setImage(with: URL(string: AuthServices.instance.profile.passport ?? ""), for: .normal)
+            imageCert.sd_setImage(with: URL(string: AuthServices.instance.profile.imgcert ?? ""), for: .normal)
+            
+        default:
+            break
+        }
+        
     }
     
     func loadUI(){
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         sendRequest.layer.cornerRadius = 15
-        carIcon.layer.cornerRadius = carIcon.frame.height/2
         for tf in customTFs{
             tf.addBottomBorder()
         }
@@ -106,7 +137,7 @@ class SignUpVC: UIViewController , UIGestureRecognizerDelegate{
         }
         
     }
-
+    
     @IBAction func back(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -119,42 +150,32 @@ class SignUpVC: UIViewController , UIGestureRecognizerDelegate{
             }) { (result, controller) in
                 controller.dismiss(animated: true, completion: nil)
                 self.profileImage.image = result.originalImage
+                self.selectedProfileImage = result.originalImage
             }
             
             self.present(imagePicker, animated: true, completion: nil)
             
         }
         
-        carPic.addTapGesture { (_) in
-            
+        ssidFront.onTap {
             let imagePicker = UIImagePickerController.init(source: .photoLibrary, allow: .image, showsCameraControls: true, didCancel: { (controller) in
                 controller.dismiss(animated: true, completion: nil)
             }) { (result, controller) in
                 controller.dismiss(animated: true, completion: nil)
-                self.carPic.image = result.originalImage
+                self.ssidFront.setImage(result.originalImage, for: .normal)
+                self.selectedSSIDFront = result.originalImage
             }
-            
-            self.present(imagePicker, animated: true, completion: nil)
-            
-        }
-        
-        idCardOption1.onTap {
-            let imagePicker = UIImagePickerController.init(source: .photoLibrary, allow: .image, showsCameraControls: true, didCancel: { (controller) in
-                controller.dismiss(animated: true, completion: nil)
-            }) { (result, controller) in
-                controller.dismiss(animated: true, completion: nil)
-                self.idCardOption1.setImage(result.originalImage, for: .normal)
-            }
-            
+
             self.present(imagePicker, animated: true, completion: nil)
         }
         
-        idCardOption2.onTap {
+        ssidBack.onTap {
             let imagePicker = UIImagePickerController.init(source: .photoLibrary, allow: .image, showsCameraControls: true, didCancel: { (controller) in
                 controller.dismiss(animated: true, completion: nil)
             }) { (result, controller) in
                 controller.dismiss(animated: true, completion: nil)
-                self.idCardOption2.setImage(result.originalImage, for: .normal)
+                self.ssidBack.setImage(result.originalImage, for: .normal)
+                self.selectedSSIDBack = result.originalImage
             }
             
             self.present(imagePicker, animated: true, completion: nil)
@@ -166,32 +187,24 @@ class SignUpVC: UIViewController , UIGestureRecognizerDelegate{
             }) { (result, controller) in
                 controller.dismiss(animated: true, completion: nil)
                 self.passportOption1.setImage(result.originalImage, for: .normal)
+                self.selectedPassport = result.originalImage
             }
             
             self.present(imagePicker, animated: true, completion: nil)
         }
         
-        driverLicenseOption1.onTap {
+        imageCert.onTap {
             let imagePicker = UIImagePickerController.init(source: .photoLibrary, allow: .image, showsCameraControls: true, didCancel: { (controller) in
                 controller.dismiss(animated: true, completion: nil)
             }) { (result, controller) in
                 controller.dismiss(animated: true, completion: nil)
-                self.driverLicenseOption1.setImage(result.originalImage, for: .normal)
+                self.imageCert.setImage(result.originalImage, for: .normal)
+                self.selectedImageCert = result.originalImage
             }
             
             self.present(imagePicker, animated: true, completion: nil)
         }
         
-        carSlinderOption1.onTap {
-            let imagePicker = UIImagePickerController.init(source: .photoLibrary, allow: .image, showsCameraControls: true, didCancel: { (controller) in
-                controller.dismiss(animated: true, completion: nil)
-            }) { (result, controller) in
-                controller.dismiss(animated: true, completion: nil)
-                self.carSlinderOption1.setImage(result.originalImage, for: .normal)
-            }
-            
-            self.present(imagePicker, animated: true, completion: nil)
-        }
         
     }
     
@@ -205,5 +218,46 @@ class SignUpVC: UIViewController , UIGestureRecognizerDelegate{
         }
     }
     
+    @IBAction func sendRequestAction(_ sender: Any) {
+        
+        let driverInfo = DriverInfo(
+            name: nameTF.text!,
+            email: emailTF.text!,
+            password: passTF.text!,
+            phone: phoneTf.text!,
+            image: selectedProfileImage,
+            fcm_token: UserDefaults.init().string(forKey: "FCM_Token") ?? "",
+            lat: "\(SharedData.userLat ?? 0.0)", lng: "\(SharedData.userLng ?? 0.0)",
+            nationality: "",
+            imgcert: selectedImageCert,
+            ssid_driver: ssidDriverTF.text!,
+            ssidfront: selectedSSIDFront, ssidback: selectedSSIDBack,
+            address: addressTF.text!,
+            passport: selectedPassport,
+            phone_intreal: phoneIntrakTF.text!, country_id: "", car_company_id: "")
+
+        switch viewState {
+        case .Register:
+            guard !nameTF.text!.isEmpty, !addressTF.text!.isEmpty, !ssidDriverTF.text!.isEmpty, !emailTF.text!.isEmpty, !passTF.text!.isEmpty, !phoneTf.text!.isEmpty, !phoneIntrakTF.text!.isEmpty else {
+                showAlert(title: "", message: "Please fill all required registeration fields")
+                return
+            }
+            guard let _ = selectedProfileImage, let _ = selectedImageCert, let _ = selectedSSIDFront, let _ = selectedSSIDBack, let _ = selectedPassport else {
+                showAlert(title: "", message: "Please upload all required registeration images")
+                return
+            }
+            authPresenter?.registerWith(info: driverInfo)
+            
+        case .Update:
+            authPresenter?.updateProfile(info: driverInfo)
+        }
+        
+    }
     
+    
+}
+
+enum ViewState{
+    case Register
+    case Update
 }

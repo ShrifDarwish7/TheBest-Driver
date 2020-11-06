@@ -1,15 +1,15 @@
 //
-//  HomeVC+TableViewDelegate.swift
+//  OrdersVC+TableViewDelegate.swift
 //  TheBest-iOS-Driver
 //
-//  Created by Sherif Darwish on 10/5/20.
+//  Created by Sherif Darwish on 11/3/20.
 //  Copyright © 2020 Sherif Darwish. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-extension HomeVC: UITableViewDelegate, UITableViewDataSource{
+extension OrdersVC: UITableViewDelegate, UITableViewDataSource{
     
     func loadTableFromNib(){
         

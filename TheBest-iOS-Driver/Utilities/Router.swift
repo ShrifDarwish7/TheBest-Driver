@@ -32,4 +32,24 @@ class Router{
         sender.navigationController?.pushViewController(vc, animated: true)
     }
     
+    static func toReports(_ sender: UIViewController){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ReportsVC") as! ReportsVC
+        sender.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    static func toMyProfile(_ sender: UIViewController){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SignUpVC") as! SignUpVC
+        vc.modalPresentationStyle = .fullScreen
+        vc.viewState = .Update
+        sender.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    static func toOrders(_ sender: UIViewController){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "OrdersVC") as! OrdersVC
+        sender.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

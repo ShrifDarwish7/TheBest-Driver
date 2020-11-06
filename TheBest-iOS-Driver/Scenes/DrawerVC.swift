@@ -23,14 +23,15 @@ class DrawerVC: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var balance: UIStackView!
     @IBOutlet weak var aboutUs: UIStackView!
+    @IBOutlet weak var reports: UIStackView!
+    @IBOutlet weak var profile: UIStackView!
+    @IBOutlet weak var orders: UIStackView!
+    @IBOutlet weak var main: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(showBlockView), name: NSNotification.Name("opened"), object: nil)
-        
-        username.text = AuthServices.instance.user.name
-        profileImage.sd_setImage(with: URL(string: AuthServices.instance.user.hasImage ?? ""))
         
         blockView.addTapGesture { (_) in
             
@@ -42,10 +43,8 @@ class DrawerVC: UIViewController {
         drawerView.setupShadow()
         
         backBtn.onTap {
-            
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CloseDrawer"), object: nil)
             self.blockView.alpha = 0
-            
         }
         
         
@@ -55,6 +54,32 @@ class DrawerVC: UIViewController {
             Router.toLoginVC(self)
         }
         
+        reports.addTapGesture { (_) in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CloseDrawer"), object: nil)
+            Router.toReports(self)
+        }
+        
+        profile.addTapGesture { (_) in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CloseDrawer"), object: nil)
+            Router.toMyProfile(self)
+        }
+        
+        orders.addTapGesture { (_) in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CloseDrawer"), object: nil)
+            Router.toOrders(self)
+        }
+        
+        main.addTapGesture { (_) in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CloseDrawer"), object: nil)
+            Router.toHome(self)
+        }
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        username.text = AuthServices.instance.profile.name
+        profileImage.sd_setImage(with: URL(string: AuthServices.instance.profile.hasImage ?? ""))
     }
     
     @objc func showBlockView(){

@@ -38,12 +38,12 @@ class IncomingOrderTableViewCell: UITableViewCell {
         topView.layer.cornerRadius = 15
     }
     
-    func loadFrom(_ order: MyOrder){
+    func loadFrom(_ trip: MyTrip){
         loadUI()
-        statusLbl.text = order.status
-        addressFrom.text = order.addressFrom
-        addressTo.text = order.addressTo
-        total.text = "\(order.total)" + " " + "KWD"
+        statusLbl.text = trip.status
+        addressFrom.text = trip.addressFrom
+        addressTo.text = trip.addressTo
+        total.text = "\(trip.total)" + " " + "KWD"
     }
     
 }

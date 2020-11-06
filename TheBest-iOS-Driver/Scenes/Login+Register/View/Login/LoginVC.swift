@@ -43,7 +43,7 @@ class LoginVC: UIViewController {
             showAlert(title: "", message: "Please enter your email and password")
             return
         }
-        self.authPresenter?.loginWith(email: self.usernameTF.text!, password: self.passTF.text!, fcmToken: "")
+        self.authPresenter?.loginWith(email: self.usernameTF.text!, password: self.passTF.text!, fcmToken: UserDefaults.init().string(forKey: "FCM_Token") ?? "")
     }
     
     @IBAction func signupAction(_ sender: Any) {

@@ -17,4 +17,5 @@ class SharedData{
     static let goolgeApiKey = "AIzaSyDBDV-XxFpmbx79T5HLPrG9RmjDpiYshmE"
     static var userLat: CLLocationDegrees?
     static var userLng: CLLocationDegrees?
+    static var receivedOrder: ReceivedOrder?
 }

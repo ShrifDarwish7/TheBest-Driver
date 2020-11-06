@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA2D297F254D92880039A53A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA2D297E254D92880039A53A /* GoogleService-Info.plist */; };
 		AA3D2925252771740083FD54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2924252771740083FD54 /* AppDelegate.swift */; };
 		AA3D2927252771740083FD54 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2926252771740083FD54 /* SceneDelegate.swift */; };
 		AA3D2929252771740083FD54 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2928252771740083FD54 /* LoginVC.swift */; };
@@ -30,11 +31,15 @@
 		AA3D295C252775380083FD54 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2956252775370083FD54 /* Alert.swift */; };
 		AA3D295D252775380083FD54 /* SetupPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2957252775380083FD54 /* SetupPicker.swift */; };
 		AA3D295E252775380083FD54 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2958252775380083FD54 /* Gradient.swift */; };
-		AA3D296125277BCB0083FD54 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA3D296025277BCB0083FD54 /* GoogleService-Info.plist */; };
+		AA5DF088254E0AA20023A485 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DF087254E0AA20023A485 /* RegisterResponse.swift */; };
+		AA5DF08C254E0EDA0023A485 /* ReportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DF08B254E0EDA0023A485 /* ReportsVC.swift */; };
+		AA5DF08F254E0EEB0023A485 /* ReportsVC+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DF08D254E0EEB0023A485 /* ReportsVC+UITableViewDelegate.swift */; };
+		AA5DF090254E0EEB0023A485 /* ReportsVC+MainViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DF08E254E0EEB0023A485 /* ReportsVC+MainViewDelegate.swift */; };
+		AA5DF092254E10060023A485 /* ReportsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5DF091254E10060023A485 /* ReportsResponse.swift */; };
+		AAB1A16C2552D37700065179 /* ReceivedOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB1A16B2552D37700065179 /* ReceivedOrder.swift */; };
 		AABBB29D2539008E009A8DE7 /* HomeVC+MainViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBB29C2539008E009A8DE7 /* HomeVC+MainViewDelegate.swift */; };
 		AABBB29F2539048F009A8DE7 /* DriverReports.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBB29E2539048F009A8DE7 /* DriverReports.swift */; };
 		AABBB2A125390A06009A8DE7 /* TripByIdResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABBB2A025390A06009A8DE7 /* TripByIdResponse.swift */; };
-		AABC77AA252B2D4700F1B896 /* HomeVC+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AABC77A9252B2D4700F1B896 /* HomeVC+TableViewDelegate.swift */; };
 		AAC9801125307A2600BC1911 /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9801025307A2600BC1911 /* APIServices.swift */; };
 		AAC9801425307AB900BC1911 /* DriversSpecialty.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC9801325307AB900BC1911 /* DriversSpecialty.swift */; };
 		AACE62902538F5E200EB770D /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACE628F2538F5E200EB770D /* ProfileResponse.swift */; };
@@ -45,19 +50,24 @@
 		AAD2A317252B174100E11391 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2A316252B174100E11391 /* HomeVC.swift */; };
 		AAD2A31C252B25FA00E11391 /* IncomingOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD2A31A252B25FA00E11391 /* IncomingOrderTableViewCell.swift */; };
 		AAD2A31D252B25FA00E11391 /* IncomingOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD2A31B252B25FA00E11391 /* IncomingOrderTableViewCell.xib */; };
+		AAD3EB44254C456B0012E0D3 /* SignUpVC+AuthViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD3EB43254C456B0012E0D3 /* SignUpVC+AuthViewDelegate.swift */; };
 		AAD7BEC72527DF81004BB98F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7BEC62527DF81004BB98F /* SignUpVC.swift */; };
 		AAD7BEC92527E6C2004BB98F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7BEC82527E6C2004BB98F /* Router.swift */; };
 		AAD7BECB2527F1B2004BB98F /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7BECA2527F1B2004BB98F /* TextFields.swift */; };
 		AAE73CA4252A0957009584B9 /* ChooseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73CA2252A0957009584B9 /* ChooseCollectionViewCell.swift */; };
 		AAE73CA5252A0957009584B9 /* ChooseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE73CA3252A0957009584B9 /* ChooseCollectionViewCell.xib */; };
 		AAE73CA8252A0B5B009584B9 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE73CA7252A0B5B009584B9 /* Option.swift */; };
-		AAFDB530252F6635000512A7 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDB52F252F6635000512A7 /* LoginPresenter.swift */; };
+		AAFA31592551550B0080C50A /* OrdersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA31582551550B0080C50A /* OrdersVC.swift */; };
+		AAFA315B2551562D0080C50A /* OrdersVC+MainViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA315A2551562D0080C50A /* OrdersVC+MainViewDelegate.swift */; };
+		AAFA315D2551564E0080C50A /* OrdersVC+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA315C2551564E0080C50A /* OrdersVC+TableViewDelegate.swift */; };
+		AAFA315F255157C40080C50A /* HomeVC+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFA315E255157C40080C50A /* HomeVC+CLLocationManagerDelegate.swift */; };
+		AAFDB530252F6635000512A7 /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDB52F252F6635000512A7 /* AuthPresenter.swift */; };
 		AAFDB532252F6670000512A7 /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDB531252F6670000512A7 /* AuthServices.swift */; };
 		AAFDB535252F6744000512A7 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDB534252F6744000512A7 /* LoginResponse.swift */; };
 		AAFDB537252F676E000512A7 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDB536252F676E000512A7 /* APIs.swift */; };
 		AAFDB539252F681A000512A7 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDB538252F681A000512A7 /* SharedData.swift */; };
 		AAFDB53D252F7471000512A7 /* LoginVC+AuthViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDB53C252F7471000512A7 /* LoginVC+AuthViewDelegate.swift */; };
-		AAFDB545252F826F000512A7 /* RegisterPrms.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDB544252F826F000512A7 /* RegisterPrms.swift */; };
+		AAFDB545252F826F000512A7 /* DriverInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDB544252F826F000512A7 /* DriverInfo.swift */; };
 		AAFDB547252F856E000512A7 /* LoginVC+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFDB546252F856E000512A7 /* LoginVC+CLLocationManagerDelegate.swift */; };
 		D9162586707446DDCCE18E03 /* Pods_TheBest_iOS_Driver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D7CAB46C20E910D6CF66A88 /* Pods_TheBest_iOS_Driver.framework */; };
 /* End PBXBuildFile section */
@@ -66,7 +76,8 @@
 		1B90ED3A8A644E837F39195F /* Pods-TheBest-iOS-Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBest-iOS-Driver.release.xcconfig"; path = "Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver.release.xcconfig"; sourceTree = "<group>"; };
 		5D7CAB46C20E910D6CF66A88 /* Pods_TheBest_iOS_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheBest_iOS_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F95078B49ED869431025FA /* Pods-TheBest-iOS-Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBest-iOS-Driver.debug.xcconfig"; path = "Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver.debug.xcconfig"; sourceTree = "<group>"; };
-		AA3D2921252771740083FD54 /* TheBest-iOS-Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheBest-iOS-Driver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA2D297E254D92880039A53A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA3D2921252771740083FD54 /* The Best Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Best Driver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3D2924252771740083FD54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3D2926252771740083FD54 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AA3D2928252771740083FD54 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -91,11 +102,15 @@
 		AA3D2956252775370083FD54 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		AA3D2957252775380083FD54 /* SetupPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPicker.swift; sourceTree = "<group>"; };
 		AA3D2958252775380083FD54 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
-		AA3D296025277BCB0083FD54 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA5DF087254E0AA20023A485 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		AA5DF08B254E0EDA0023A485 /* ReportsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsVC.swift; sourceTree = "<group>"; };
+		AA5DF08D254E0EEB0023A485 /* ReportsVC+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReportsVC+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		AA5DF08E254E0EEB0023A485 /* ReportsVC+MainViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReportsVC+MainViewDelegate.swift"; sourceTree = "<group>"; };
+		AA5DF091254E10060023A485 /* ReportsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsResponse.swift; sourceTree = "<group>"; };
+		AAB1A16B2552D37700065179 /* ReceivedOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedOrder.swift; sourceTree = "<group>"; };
 		AABBB29C2539008E009A8DE7 /* HomeVC+MainViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+MainViewDelegate.swift"; sourceTree = "<group>"; };
 		AABBB29E2539048F009A8DE7 /* DriverReports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverReports.swift; sourceTree = "<group>"; };
 		AABBB2A025390A06009A8DE7 /* TripByIdResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripByIdResponse.swift; sourceTree = "<group>"; };
-		AABC77A9252B2D4700F1B896 /* HomeVC+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+TableViewDelegate.swift"; sourceTree = "<group>"; };
 		AAC9801025307A2600BC1911 /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
 		AAC9801325307AB900BC1911 /* DriversSpecialty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriversSpecialty.swift; sourceTree = "<group>"; };
 		AACE628F2538F5E200EB770D /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
@@ -106,19 +121,25 @@
 		AAD2A316252B174100E11391 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		AAD2A31A252B25FA00E11391 /* IncomingOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingOrderTableViewCell.swift; sourceTree = "<group>"; };
 		AAD2A31B252B25FA00E11391 /* IncomingOrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IncomingOrderTableViewCell.xib; sourceTree = "<group>"; };
+		AAD3EB43254C456B0012E0D3 /* SignUpVC+AuthViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpVC+AuthViewDelegate.swift"; sourceTree = "<group>"; };
 		AAD7BEC62527DF81004BB98F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		AAD7BEC82527E6C2004BB98F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		AAD7BECA2527F1B2004BB98F /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
+		AAD9477F254EE4E200E75266 /* The Best Driver.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "The Best Driver.entitlements"; sourceTree = "<group>"; };
 		AAE73CA2252A0957009584B9 /* ChooseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseCollectionViewCell.swift; sourceTree = "<group>"; };
 		AAE73CA3252A0957009584B9 /* ChooseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseCollectionViewCell.xib; sourceTree = "<group>"; };
 		AAE73CA7252A0B5B009584B9 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
-		AAFDB52F252F6635000512A7 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		AAFA31582551550B0080C50A /* OrdersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersVC.swift; sourceTree = "<group>"; };
+		AAFA315A2551562D0080C50A /* OrdersVC+MainViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrdersVC+MainViewDelegate.swift"; sourceTree = "<group>"; };
+		AAFA315C2551564E0080C50A /* OrdersVC+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrdersVC+TableViewDelegate.swift"; sourceTree = "<group>"; };
+		AAFA315E255157C40080C50A /* HomeVC+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
+		AAFDB52F252F6635000512A7 /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		AAFDB531252F6670000512A7 /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		AAFDB534252F6744000512A7 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		AAFDB536252F676E000512A7 /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		AAFDB538252F681A000512A7 /* SharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedData.swift; sourceTree = "<group>"; };
 		AAFDB53C252F7471000512A7 /* LoginVC+AuthViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC+AuthViewDelegate.swift"; sourceTree = "<group>"; };
-		AAFDB544252F826F000512A7 /* RegisterPrms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPrms.swift; sourceTree = "<group>"; };
+		AAFDB544252F826F000512A7 /* DriverInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverInfo.swift; sourceTree = "<group>"; };
 		AAFDB546252F856E000512A7 /* LoginVC+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVC+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,7 +176,7 @@
 		AA3D2922252771740083FD54 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA3D2921252771740083FD54 /* TheBest-iOS-Driver.app */,
+				AA3D2921252771740083FD54 /* The Best Driver.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +184,7 @@
 		AA3D2923252771740083FD54 /* TheBest-iOS-Driver */ = {
 			isa = PBXGroup;
 			children = (
+				AAD9477F254EE4E200E75266 /* The Best Driver.entitlements */,
 				AA3D293B252773640083FD54 /* Configurations */,
 				AA3D293C252773BB0083FD54 /* Storyboards */,
 				AA3D29AC252782D10083FD54 /* Scenes */,
@@ -177,7 +199,7 @@
 			children = (
 				AA3D2924252771740083FD54 /* AppDelegate.swift */,
 				AA3D2926252771740083FD54 /* SceneDelegate.swift */,
-				AA3D296025277BCB0083FD54 /* GoogleService-Info.plist */,
+				AA2D297E254D92880039A53A /* GoogleService-Info.plist */,
 				AA3D2935252771770083FD54 /* Info.plist */,
 				AA3D2930252771770083FD54 /* Assets.xcassets */,
 			);
@@ -251,12 +273,32 @@
 			isa = PBXGroup;
 			children = (
 				AAE73CA1252A0920009584B9 /* XIBs */,
-				AAFDB542252F7574000512A7 /* Presenter */,
 				AAFDB541252F756E000512A7 /* Interactor */,
+				AAFDB542252F7574000512A7 /* Presenter */,
 				AAFDB540252F7568000512A7 /* View */,
 				AAFDB53F252F7563000512A7 /* Model */,
 			);
 			path = "Login+Register";
+			sourceTree = "<group>";
+		};
+		AA5DF089254E0EB60023A485 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AAD2A316252B174100E11391 /* HomeVC.swift */,
+				AABBB29C2539008E009A8DE7 /* HomeVC+MainViewDelegate.swift */,
+				AAFA315E255157C40080C50A /* HomeVC+CLLocationManagerDelegate.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AA5DF08A254E0EC00023A485 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				AA5DF08B254E0EDA0023A485 /* ReportsVC.swift */,
+				AA5DF08E254E0EEB0023A485 /* ReportsVC+MainViewDelegate.swift */,
+				AA5DF08D254E0EEB0023A485 /* ReportsVC+UITableViewDelegate.swift */,
+			);
+			path = Reports;
 			sourceTree = "<group>";
 		};
 		AAC9800D253078DE00BC1911 /* Main */ = {
@@ -283,10 +325,11 @@
 			isa = PBXGroup;
 			children = (
 				AAC9801325307AB900BC1911 /* DriversSpecialty.swift */,
-				AACE628F2538F5E200EB770D /* ProfileResponse.swift */,
 				AACE62912538F8DF00EB770D /* MyOrdersResponse.swift */,
 				AABBB29E2539048F009A8DE7 /* DriverReports.swift */,
 				AABBB2A025390A06009A8DE7 /* TripByIdResponse.swift */,
+				AA5DF091254E10060023A485 /* ReportsResponse.swift */,
+				AAB1A16B2552D37700065179 /* ReceivedOrder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,9 +345,9 @@
 		AAD2A315252B172300E11391 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AAD2A316252B174100E11391 /* HomeVC.swift */,
-				AABC77A9252B2D4700F1B896 /* HomeVC+TableViewDelegate.swift */,
-				AABBB29C2539008E009A8DE7 /* HomeVC+MainViewDelegate.swift */,
+				AAFA3157255154F70080C50A /* Orders */,
+				AA5DF089254E0EB60023A485 /* Home */,
+				AA5DF08A254E0EC00023A485 /* Reports */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -335,6 +378,16 @@
 			path = XIBs;
 			sourceTree = "<group>";
 		};
+		AAFA3157255154F70080C50A /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				AAFA31582551550B0080C50A /* OrdersVC.swift */,
+				AAFA315A2551562D0080C50A /* OrdersVC+MainViewDelegate.swift */,
+				AAFA315C2551564E0080C50A /* OrdersVC+TableViewDelegate.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
 		AAFDB53E252F7554000512A7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,7 +403,9 @@
 			children = (
 				AAE73CA7252A0B5B009584B9 /* Option.swift */,
 				AAFDB534252F6744000512A7 /* LoginResponse.swift */,
-				AAFDB544252F826F000512A7 /* RegisterPrms.swift */,
+				AAFDB544252F826F000512A7 /* DriverInfo.swift */,
+				AA5DF087254E0AA20023A485 /* RegisterResponse.swift */,
+				AACE628F2538F5E200EB770D /* ProfileResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -375,7 +430,7 @@
 		AAFDB542252F7574000512A7 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				AAFDB52F252F6635000512A7 /* LoginPresenter.swift */,
+				AAFDB52F252F6635000512A7 /* AuthPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -384,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				AAD7BEC62527DF81004BB98F /* SignUpVC.swift */,
+				AAD3EB43254C456B0012E0D3 /* SignUpVC+AuthViewDelegate.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -417,7 +473,7 @@
 			);
 			name = "TheBest-iOS-Driver";
 			productName = "TheBest-iOS-Driver";
-			productReference = AA3D2921252771740083FD54 /* TheBest-iOS-Driver.app */;
+			productReference = AA3D2921252771740083FD54 /* The Best Driver.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -458,12 +514,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA2D297F254D92880039A53A /* GoogleService-Info.plist in Resources */,
 				AA3D2949252774760083FD54 /* Lato-BlackItalic.ttf in Resources */,
 				AAE73CA5252A0957009584B9 /* ChooseCollectionViewCell.xib in Resources */,
 				AA3D294F252774760083FD54 /* Lato-LightItalic.ttf in Resources */,
 				AA3D294B252774760083FD54 /* Lato-Regular.ttf in Resources */,
 				AA3D294C252774760083FD54 /* Lato-Thin.ttf in Resources */,
-				AA3D296125277BCB0083FD54 /* GoogleService-Info.plist in Resources */,
 				AAD2A31D252B25FA00E11391 /* IncomingOrderTableViewCell.xib in Resources */,
 				AA3D2934252771770083FD54 /* LaunchScreen.storyboard in Resources */,
 				AA3D2931252771770083FD54 /* Assets.xcassets in Resources */,
@@ -546,33 +602,43 @@
 			files = (
 				AA3D2929252771740083FD54 /* LoginVC.swift in Sources */,
 				AABBB29F2539048F009A8DE7 /* DriverReports.swift in Sources */,
+				AAFA315B2551562D0080C50A /* OrdersVC+MainViewDelegate.swift in Sources */,
 				AAFDB547252F856E000512A7 /* LoginVC+CLLocationManagerDelegate.swift in Sources */,
 				AA3D295A252775380083FD54 /* Images.swift in Sources */,
 				AA3D2925252771740083FD54 /* AppDelegate.swift in Sources */,
 				AAD7BEC72527DF81004BB98F /* SignUpVC.swift in Sources */,
 				AABBB29D2539008E009A8DE7 /* HomeVC+MainViewDelegate.swift in Sources */,
-				AAFDB530252F6635000512A7 /* LoginPresenter.swift in Sources */,
+				AAFA315F255157C40080C50A /* HomeVC+CLLocationManagerDelegate.swift in Sources */,
+				AAFDB530252F6635000512A7 /* AuthPresenter.swift in Sources */,
 				AAD7BEC92527E6C2004BB98F /* Router.swift in Sources */,
-				AABC77AA252B2D4700F1B896 /* HomeVC+TableViewDelegate.swift in Sources */,
+				AA5DF08F254E0EEB0023A485 /* ReportsVC+UITableViewDelegate.swift in Sources */,
 				AACE62922538F8DF00EB770D /* MyOrdersResponse.swift in Sources */,
 				AACE62902538F5E200EB770D /* ProfileResponse.swift in Sources */,
 				AAD2A317252B174100E11391 /* HomeVC.swift in Sources */,
 				AA3D2959252775380083FD54 /* CustomViews.swift in Sources */,
+				AAFA315D2551564E0080C50A /* OrdersVC+TableViewDelegate.swift in Sources */,
+				AA5DF08C254E0EDA0023A485 /* ReportsVC.swift in Sources */,
 				AAC9801425307AB900BC1911 /* DriversSpecialty.swift in Sources */,
 				AAFDB532252F6670000512A7 /* AuthServices.swift in Sources */,
+				AA5DF090254E0EEB0023A485 /* ReportsVC+MainViewDelegate.swift in Sources */,
 				AA3D2927252771740083FD54 /* SceneDelegate.swift in Sources */,
 				AABBB2A125390A06009A8DE7 /* TripByIdResponse.swift in Sources */,
 				AACE62952538FD1300EB770D /* MainPresenter.swift in Sources */,
+				AAB1A16C2552D37700065179 /* ReceivedOrder.swift in Sources */,
 				AAFDB53D252F7471000512A7 /* LoginVC+AuthViewDelegate.swift in Sources */,
 				AAD2A313252B134C00E11391 /* DrawerVC.swift in Sources */,
 				AAFDB539252F681A000512A7 /* SharedData.swift in Sources */,
-				AAFDB545252F826F000512A7 /* RegisterPrms.swift in Sources */,
+				AAFA31592551550B0080C50A /* OrdersVC.swift in Sources */,
+				AAFDB545252F826F000512A7 /* DriverInfo.swift in Sources */,
 				AAE73CA8252A0B5B009584B9 /* Option.swift in Sources */,
 				AAE73CA4252A0957009584B9 /* ChooseCollectionViewCell.swift in Sources */,
+				AA5DF092254E10060023A485 /* ReportsResponse.swift in Sources */,
 				AA3D295E252775380083FD54 /* Gradient.swift in Sources */,
 				AA3D292F252771740083FD54 /* TheBest_iOS_Driver.xcdatamodeld in Sources */,
 				AAD7BECB2527F1B2004BB98F /* TextFields.swift in Sources */,
+				AAD3EB44254C456B0012E0D3 /* SignUpVC+AuthViewDelegate.swift in Sources */,
 				AA3D295C252775380083FD54 /* Alert.swift in Sources */,
+				AA5DF088254E0AA20023A485 /* RegisterResponse.swift in Sources */,
 				AA3D295D252775380083FD54 /* SetupPicker.swift in Sources */,
 				AAFDB537252F676E000512A7 /* APIs.swift in Sources */,
 				AAD2A31C252B25FA00E11391 /* IncomingOrderTableViewCell.swift in Sources */,
@@ -723,16 +789,18 @@
 			baseConfigurationReference = 91F95078B49ED869431025FA /* Pods-TheBest-iOS-Driver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "TheBest-iOS-Driver/The Best Driver.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P675879D6G;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 3Z2NC2D4N3;
 				INFOPLIST_FILE = "TheBest-iOS-Driver/Configurations/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.thebest.TheBest-iOS-Driver";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thebest.TheBest-Driver-iOS";
+				PRODUCT_NAME = "The Best Driver";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -743,16 +811,18 @@
 			baseConfigurationReference = 1B90ED3A8A644E837F39195F /* Pods-TheBest-iOS-Driver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "TheBest-iOS-Driver/The Best Driver.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P675879D6G;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_TEAM = 3Z2NC2D4N3;
 				INFOPLIST_FILE = "TheBest-iOS-Driver/Configurations/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.thebest.TheBest-iOS-Driver";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.thebest.TheBest-Driver-iOS";
+				PRODUCT_NAME = "The Best Driver";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -7,25 +7,32 @@
 //
 
 import Foundation
+import GoogleMaps
 
 protocol MainViewDelegate{
     func SVProgressStatus(_ show: Bool)
-    func didCompletedWithOrders(_ orders: [MyOrder]?)
-    func didCompleteWithReports(_ reports: DriverReports?)
+    func didCompletedWithOrders(_ orders: [MyTrip]?)
     func didCompleteWithTripByID(_ trip: MyTrip?)
     func didCompleteConfirmEndRideByID(_ error: Bool)
     func didCompleteConfirmRidePrice(_ error: Bool)
     func didCompleteConfirmDriverHere(_ error: Bool)
+    func didCompleteWithReports(_ reports: ReportsResponse?)
+    func didCompleteWithAddressFromGoogleMapsAPI(_ address: String?)
+    func didCompleteWithDirectionFromGoogleMapsAPI(_ polyline: GMSPolyline?)
+    func didCompleteAcceptOrder(_ error: Bool)
 }
 
 extension MainViewDelegate{
     func SVProgressStatus(_ show: Bool){}
-    func didCompletedWithOrders(_ orders: [MyOrder]?){}
-    func didCompleteWithReports(_ reports: DriverReports?){}
+    func didCompletedWithOrders(_ orders: [MyTrip]?){}
     func didCompleteWithTripByID(_ trip: MyTrip?){}
     func didCompleteConfirmEndRideByID(_ error: Bool){}
     func didCompleteConfirmRidePrice(_ error: Bool){}
     func didCompleteConfirmDriverHere(_ error: Bool){}
+    func didCompleteWithReports(_ reports: ReportsResponse?){}
+    func didCompleteWithAddressFromGoogleMapsAPI(_ address: String?){}
+    func didCompleteWithDirectionFromGoogleMapsAPI(_ polyline: GMSPolyline?){}
+    func didCompleteAcceptOrder(_ error: Bool){}
 }
 
 class MainPresenter{
@@ -44,18 +51,6 @@ class MainPresenter{
                 self.mainViewDelegate?.didCompletedWithOrders(response?.myOrders)
             }else{
                 self.mainViewDelegate?.didCompletedWithOrders(nil)
-            }
-        }
-    }
-    
-    func getReports(from: String, to: String){
-        self.mainViewDelegate?.SVProgressStatus(true)
-        APIServices.getDriverReports(from, to) { (reports) in
-            self.mainViewDelegate?.SVProgressStatus(false)
-            if let _ = reports{
-                self.mainViewDelegate?.didCompleteWithReports(reports)
-            }else{
-                self.mainViewDelegate?.didCompleteWithReports(nil)
             }
         }
     }
@@ -105,6 +100,60 @@ class MainPresenter{
                 self.mainViewDelegate?.didCompleteConfirmDriverHere(false)
             }else{
                 self.mainViewDelegate?.didCompleteConfirmDriverHere(true)
+            }
+        }
+    }
+    
+    func getReports(from: Date, to: Date){
+        self.mainViewDelegate?.SVProgressStatus(true)
+        var fromPrms: String?
+        var toPrms: String?
+        let calendar = Calendar.current
+        let componentsFrom = calendar.dateComponents([.day,.month,.year], from: from)
+        let componentsTo = calendar.dateComponents([.day,.month,.year], from: to)
+        if let day = componentsFrom.day, let month = componentsFrom.month, let year = componentsFrom.year {
+            fromPrms = String(day) + "-" + String(month) + "-" + String(year)
+        }
+        
+        if let day = componentsTo.day, let month = componentsTo.month, let year = componentsTo.year {
+            toPrms = String(day) + "-" + String(month) + "-" + String(year)
+        }
+        
+        guard let _ = fromPrms, let _ = toPrms else{
+            self.mainViewDelegate?.didCompleteWithReports(nil)
+            return
+        }
+        
+        APIServices.getDriverReports(fromPrms!, toPrms!) { (response) in
+            self.mainViewDelegate?.SVProgressStatus(false)
+            if let _ = response{
+                self.mainViewDelegate?.didCompleteWithReports(response)
+            }else{
+                self.mainViewDelegate?.didCompleteWithReports(nil)
+            }
+        }
+    }
+    
+    func getAdressWith(location: String){
+        self.mainViewDelegate?.SVProgressStatus(true)
+        APIServices.getAddressFromGoogleMapsAPI(location: location) { (address) in
+            self.mainViewDelegate?.SVProgressStatus(false)
+            if let _ = address{
+                self.mainViewDelegate?.didCompleteWithAddressFromGoogleMapsAPI(address)
+            }else{
+                self.mainViewDelegate?.didCompleteWithAddressFromGoogleMapsAPI(nil)
+            }
+        }
+    }
+    
+    func acceptOrder(id: Int, clientID: String){
+        self.mainViewDelegate?.SVProgressStatus(true)
+        APIServices.acceptOrder(id, "\(SharedData.userLat ?? 0.0)", "\(SharedData.userLng ?? 0.0)", clientID) { (completed) in
+            self.mainViewDelegate?.SVProgressStatus(false)
+            if completed{
+                self.mainViewDelegate?.didCompleteAcceptOrder(false)
+            }else{
+                self.mainViewDelegate?.didCompleteAcceptOrder(true)
             }
         }
     }

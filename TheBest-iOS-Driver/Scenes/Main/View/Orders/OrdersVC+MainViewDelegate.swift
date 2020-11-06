@@ -1,15 +1,15 @@
 //
-//  HomeVC+HomeViewDelegate.swift
+//  OrdersVC+MainViewDelegate.swift
 //  TheBest-iOS-Driver
 //
-//  Created by Sherif Darwish on 10/16/20.
+//  Created by Sherif Darwish on 11/3/20.
 //  Copyright © 2020 Sherif Darwish. All rights reserved.
 //
 
 import Foundation
 import SVProgressHUD
 
-extension HomeVC: MainViewDelegate{
+extension OrdersVC: MainViewDelegate{
     
     func SVProgressStatus(_ show: Bool) {
         if show{
@@ -19,7 +19,7 @@ extension HomeVC: MainViewDelegate{
         }
     }
     
-    func didCompletedWithOrders(_ orders: [MyOrder]?) {
+    func didCompletedWithOrders(_ orders: [MyTrip]?) {
         if let orders = orders,
             !orders.isEmpty
         {
