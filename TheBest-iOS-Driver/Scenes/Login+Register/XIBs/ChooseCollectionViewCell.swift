@@ -13,9 +13,14 @@ class ChooseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var check: UIImageView!
     
-    func loadFrom(option: Option){
-        title.text = option.title
-        check.image = option.selected == true ? UIImage(named: "checked") : UIImage(named: "unchecked")
+    func loadFrom(specialty: Specialty){
+        title.text = specialty.name
+        check.image = specialty.selected == true ? UIImage(named: "checked") : UIImage(named: "unchecked")
+    }
+    
+    func loadFrom(country: Country){
+        title.text = country.name
+        check.image = country.selected == true ? UIImage(named: "checked") : UIImage(named: "unchecked")
     }
     
 }

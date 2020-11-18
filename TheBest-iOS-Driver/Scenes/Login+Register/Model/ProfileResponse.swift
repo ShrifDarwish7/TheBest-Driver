@@ -23,14 +23,14 @@ struct ProfileResponse: Codable {
 
 // MARK: - CurrnetTrip
 struct CurrnetTrip: Codable {
-    let id, clientID, driverID: Int
-    let fromLat, fromLng, toLat, toLng: Double
-    let paymentMethod: String
-    let total: Int
-    let status, addressFrom, addressTo: String
+    let id, clientID, driverID: Int?
+    let fromLat, fromLng, toLat, toLng: Double?
+    let paymentMethod: String?
+    let total: Int?
+    let status, addressFrom, addressTo: String?
     let driverComment: String?
-    let rideType: Int
-    let createdAt, updatedAt: String
+    let rideType: Int?
+    let createdAt, updatedAt: String?
 
     enum CodingKeys: String, CodingKey {
         case id

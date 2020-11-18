@@ -26,7 +26,7 @@ class Drawer{
         
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
             
-            constraint.constant = vc.view.frame.width
+            constraint.constant = "lang".localized == "en" ? vc.view.frame.width : -vc.view.frame.width
             vc.view.layoutIfNeeded()
             
         }) { (_) in

@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Main"; ObjectID = "4Ui-LY-FdA"; */
+"4Ui-LY-FdA.text" = "الرئيسية";
+
+/* Class = "UILabel"; text = "Sherif Darwish"; ObjectID = "BJF-ck-lFd"; */
+"BJF-ck-lFd.text" = "Sherif Darwish";
+
+/* Class = "UILabel"; text = "Reports"; ObjectID = "XOo-EQ-mx6"; */
+"XOo-EQ-mx6.text" = "التقارير";
+
+/* Class = "UILabel"; text = "Orders"; ObjectID = "ohu-m2-y8S"; */
+"ohu-m2-y8S.text" = "الطلبات";
+
+/* Class = "UILabel"; text = "Logout"; ObjectID = "w1P-CT-e5i"; */
+"w1P-CT-e5i.text" = "تسجيل خروج";
+
+/* Class = "UILabel"; text = "My Profile"; ObjectID = "wLc-oF-C2d"; */
+"wLc-oF-C2d.text" = "ملفي الشخصي";

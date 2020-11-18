@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  TheBest-iOS-Driver
+
+  Created by Sherif Darwish on 11/15/20.
+  Copyright © 2020 Sherif Darwish. All rights reserved.
+*/
+
+"lang" = "en";
+"Change language" = "Change language";
+"Choose language" = "Choose language";
+"English US" = "English US";
+"Arabic" = "Arabic";
+"My Profile" = "My Profile";
+"Update Profile" = "Update Profile";
+"Confirm Selection" = "Confirm Selection";
+"Specialty" = "Specialty";
+"Countries" = "Countries";

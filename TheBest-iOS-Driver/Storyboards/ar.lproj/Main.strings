@@ -1,0 +1,168 @@
+
+/* Class = "UITextField"; placeholder = "To Date"; ObjectID = "0NF-zR-JPx"; */
+"0NF-zR-JPx.placeholder" = "إلي";
+
+/* Class = "UIButton"; normalTitle = "Go"; ObjectID = "1cX-HD-YiI"; */
+"1cX-HD-YiI.normalTitle" = "إبدا";
+
+/* Class = "UILabel"; text = "Image Cert"; ObjectID = "2TD-r8-fFR"; */
+"2TD-r8-fFR.text" = "صورة شهادة";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "2bC-oq-HH1"; */
+"2bC-oq-HH1.placeholder" = "العنوان";
+
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "36D-tr-e6Q"; */
+"36D-tr-e6Q.normalTitle" = "نعم";
+
+/* Class = "UIButton"; normalTitle = "No"; ObjectID = "8NM-eX-bj1"; */
+"8NM-eX-bj1.normalTitle" = "لا";
+
+/* Class = "UILabel"; text = "Personal Info"; ObjectID = "Aiw-ZB-sCC"; */
+"Aiw-ZB-sCC.text" = "المعلومات الشخصية";
+
+/* Class = "UIButton"; normalTitle = "SEND REQUEST TO REGISTER"; ObjectID = "BHq-3b-02t"; */
+"BHq-3b-02t.normalTitle" = "إرسال طلب التسجيل";
+
+/* Class = "UIButton"; normalTitle = "LOGIN"; ObjectID = "C1f-YS-NYk"; */
+"C1f-YS-NYk.normalTitle" = "تسجيل دخول";
+
+/* Class = "UILabel"; text = "You should open your location services first"; ObjectID = "CgA-aU-TQW"; */
+"CgA-aU-TQW.text" = "يجب عليك فتح خدمات الموقع الخاص بك أولاً";
+
+/* Class = "UILabel"; text = "You have no order history !"; ObjectID = "EEJ-9q-TEF"; */
+"EEJ-9q-TEF.text" = "ليس لديك سجل الطلبات!";
+
+/* Class = "UIButton"; normalTitle = "SIGN UP"; ObjectID = "GBM-vy-2hA"; */
+"GBM-vy-2hA.normalTitle" = "تسجيل";
+
+/* Class = "UILabel"; text = "Filter By"; ObjectID = "GeM-DI-Yd3"; */
+"GeM-DI-Yd3.text" = "تصنيف بواسطة";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "Hvt-bK-cUe"; */
+"Hvt-bK-cUe.placeholder" = "الاسم";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "I9W-jB-OGC"; */
+"I9W-jB-OGC.placeholder" = "البريد الإلكتروني";
+
+/* Class = "UILabel"; text = "SSID Front"; ObjectID = "IbY-SF-hq4"; */
+"IbY-SF-hq4.text" = "صورة امامية لبطاقة الهوية";
+
+/* Class = "UIButton"; normalTitle = "Accept Order"; ObjectID = "KdM-f5-PKW"; */
+"KdM-f5-PKW.normalTitle" = "قبول الطلب";
+
+/* Class = "UILabel"; text = "You have no orders"; ObjectID = "KrR-Vo-gC6"; */
+"KrR-Vo-gC6.text" = "ليس لديك طلبات";
+
+/* Class = "UILabel"; text = "To"; ObjectID = "Lca-MD-SEa"; */
+"Lca-MD-SEa.text" = "إلي";
+
+/* Class = "UIButton"; normalTitle = "Last Week"; ObjectID = "Lxe-e3-F3v"; */
+"Lxe-e3-F3v.normalTitle" = "الاسبوغ الماضي";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "M2i-k1-0MY"; */
+"M2i-k1-0MY.placeholder" = "البريد الاكتروني";
+
+/* Class = "UITextField"; text = "Karem@test.com"; ObjectID = "M2i-k1-0MY"; */
+"M2i-k1-0MY.text" = "Karem@test.com";
+
+/* Class = "UILabel"; text = "Drivers App"; ObjectID = "Mb8-DA-Xhe"; */
+"Mb8-DA-Xhe.text" = "تطبيق السواق";
+
+/* Class = "UILabel"; text = "You have no order history !"; ObjectID = "P4z-0M-IQ0"; */
+"P4z-0M-IQ0.text" = "ليس لديك سجل الطلبات!";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Q8a-rU-h87"; */
+"Q8a-rU-h87.text" = "0";
+
+/* Class = "UILabel"; text = "Completed"; ObjectID = "TIl-1j-hA5"; */
+"TIl-1j-hA5.text" = "مكتمل";
+
+/* Class = "UIBarButtonItem"; title = "sdsd"; ObjectID = "Ujn-F9-Pva"; */
+"Ujn-F9-Pva.title" = "sdsd";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "V8u-C3-yFP"; */
+"V8u-C3-yFP.text" = "0";
+
+/* Class = "UILabel"; text = "Passport"; ObjectID = "W0e-VB-0bN"; */
+"W0e-VB-0bN.text" = "جواز السفر";
+
+/* Class = "UILabel"; text = "SSID Back"; ObjectID = "Wzg-5i-0bs"; */
+"Wzg-5i-0bs.text" = "صورة خلفية لبطاقة الهوية";
+
+/* Class = "UITextField"; placeholder = "From Date"; ObjectID = "aFb-Jg-LD5"; */
+"aFb-Jg-LD5.placeholder" = "من";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bY1-z0-7t8"; */
+"bY1-z0-7t8.text" = "Label";
+
+/* Class = "UILabel"; text = "LOGIN"; ObjectID = "bZG-Yi-a63"; */
+"bZG-Yi-a63.text" = "تسجيل دخول";
+
+/* Class = "UIButton"; normalTitle = "Last Month"; ObjectID = "ccj-tR-gYZ"; */
+"ccj-tR-gYZ.normalTitle" = "الشهر الماضي";
+
+/* Class = "UIButton"; normalTitle = "I`m Here"; ObjectID = "ctu-QH-mP3"; */
+"ctu-QH-mP3.normalTitle" = "انا هنا";
+
+/* Class = "UITextField"; placeholder = "Phone"; ObjectID = "dfF-ra-ElN"; */
+"dfF-ra-ElN.placeholder" = "الهاتف";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "eGd-sb-Qde"; */
+"eGd-sb-Qde.text" = "الاجمالي";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ezQ-yY-EIo"; */
+"ezQ-yY-EIo.text" = "Label";
+
+/* Class = "UILabel"; text = "Canceled"; ObjectID = "ghd-QW-nJX"; */
+"ghd-QW-nJX.text" = "ملغي";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "jkK-o7-0O2"; */
+"jkK-o7-0O2.placeholder" = "كلمة السر";
+
+/* Class = "UITextField"; text = "123456789"; ObjectID = "jkK-o7-0O2"; */
+"jkK-o7-0O2.text" = "123456789";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jlh-Cd-2sy"; */
+"jlh-Cd-2sy.text" = "Label";
+
+/* Class = "UILabel"; text = "From"; ObjectID = "lfH-LO-XGA"; */
+"lfH-LO-XGA.text" = "من";
+
+/* Class = "UILabel"; text = "I agree to the terms, conditions and laws"; ObjectID = "nDF-pG-MvN"; */
+"nDF-pG-MvN.text" = "أوافق على الشروط والأحكام والقوانين";
+
+/* Class = "UILabel"; text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a gall"; ObjectID = "o69-qh-KXe"; */
+"o69-qh-KXe.text" = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a gall";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "pDn-05-jGI"; */
+"pDn-05-jGI.placeholder" = "البريد الإلكتروني";
+
+/* Class = "UIButton"; normalTitle = "Deny Order"; ObjectID = "r3g-lG-kN7"; */
+"r3g-lG-kN7.normalTitle" = "رفض الطلب";
+
+/* Class = "UILabel"; text = "Total Cost"; ObjectID = "rPG-Px-oIV"; */
+"rPG-Px-oIV.text" = "إجمالي التكلفة";
+
+/* Class = "UILabel"; text = "Register"; ObjectID = "svb-HI-KMb"; */
+"svb-HI-KMb.text" = "تسجيل";
+
+/* Class = "UILabel"; text = "0 KWD"; ObjectID = "t9G-ql-Lt0"; */
+"t9G-ql-Lt0.text" = "0 KWD";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "uZ8-ej-ZcO"; */
+"uZ8-ej-ZcO.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Phone Intreal"; ObjectID = "vGr-U9-oMY"; */
+"vGr-U9-oMY.placeholder" = "الهاتف ٢";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "vLx-ln-Q5B"; */
+"vLx-ln-Q5B.text" = "0";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "vXh-6t-BKm"; */
+"vXh-6t-BKm.placeholder" = "كلمة السر";
+
+/* Class = "UIButton"; normalTitle = "Get Reports"; ObjectID = "wDV-lL-N5W"; */
+"wDV-lL-N5W.normalTitle" = "احصل على التقارير";
+
+/* Class = "UILabel"; text = "Read first before accept"; ObjectID = "x20-Ie-xQ0"; */
+"x20-Ie-xQ0.text" = "اقرأ أولاً قبل القبول";

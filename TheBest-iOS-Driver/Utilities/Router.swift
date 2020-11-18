@@ -52,4 +52,17 @@ class Router{
         sender.navigationController?.pushViewController(vc, animated: true)
     }
     
+    static func toSelection(_ sender: UIViewController){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SelectionVC") as! SelectionVC
+        sender.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    static func toCountriesSelection(_ sender: UIViewController){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SelectionVC") as! SelectionVC
+        vc.selectionData = .countries
+        sender.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

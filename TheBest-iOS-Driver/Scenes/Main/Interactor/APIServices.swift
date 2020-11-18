@@ -13,32 +13,6 @@ import GoogleMaps
 
 class APIServices{
     
-    static func getDriversSpecialty(_ completed: @escaping (DriversSpecialty?)->Void){
-        Alamofire.request(URL(string: DRIVERS_SPECIALTY_API)!, method: .get, parameters: nil, headers: SharedData.headers).responseData { (response) in
-            switch response.result{
-            case .success(let data):
-                do{
-                    
-                    let json = JSON(data)
-                    
-                    if json["status"].stringValue == "200"{
-                        let dataModel = try JSONDecoder().decode(DriversSpecialty.self, from: data)
-                        completed(dataModel)
-                    }else{
-                        completed(nil)
-                    }
-                    
-                }catch let error{
-                    print(error)
-                    completed(nil)
-                }
-            case .failure(let error):
-                print(error)
-                completed(nil)
-            }
-        }
-    }
-    
     static func myOrders(completed: @escaping (MyOrdersRsponse?)->Void){
         
         URLCache.shared.removeAllCachedResponses()
@@ -468,6 +442,54 @@ class APIServices{
             
         }
         
+    }
+    
+    static func getProfile(completed: @escaping (ProfileResponse?)->Void){
+        Alamofire.request(PROFILE_API, method: .get, parameters: nil, headers: SharedData.headers).responseData { (response) in
+            switch response.result{
+            case .success(let data):
+                do{
+                    let dataModel = try JSONDecoder.init().decode(ProfileResponse.self, from: data)
+                    completed(dataModel)
+                }catch let err{
+                    print("err",err)
+                    completed(nil)
+                }
+            default:
+                completed(nil)
+            }
+        }
+    }
+    
+    static func changeOrderStatus(id: String, status: String, completed: @escaping (Bool)->Void){
+        Alamofire.upload(multipartFormData: { (multipart) in
+            multipart.append(status.data(using: .utf8)!, withName: "status")
+        }, to: CHANGE_ORDER_STATUS_API+id, method: .post, headers: SharedData.headers) { (encodingResult) in
+            switch encodingResult{
+            case.success(request: let request,_,_):
+                request.responseData { (response) in
+                    switch response.result{
+                    case .success(let data):
+                        do{
+                            let json = try JSON(data: data)
+                            if json["status"].stringValue == "200"{
+                                completed(true)
+                            }else{
+                                completed(false)
+                            }
+                        }catch let error{
+                            print("errPars",error)
+                            completed(false)
+                        }
+                    case .failure(let error):
+                        print("err",error)
+                        completed(false)
+                    }
+                }
+            default:
+                break
+            }
+        }
     }
     
 }

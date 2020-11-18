@@ -13,6 +13,9 @@ protocol AuthViewDelegate {
     func didCompleteLoginWith(_ error: NSError?,_ banned: String?)
     func didCompletedRegister(_ registered: Bool)
     func didCompleteUpdatingProfile(_ response: ProfileResponse?)
+    func didCompleteWithSpecialty(_ specialty:[Specialty]?)
+    func didCompleteAddSpecialty(_ completed: Bool)
+    func didCompleteWithCountries(_ result: [Country]?)
 }
 
 extension AuthViewDelegate{
@@ -20,6 +23,9 @@ extension AuthViewDelegate{
     func didCompleteLoginWith(_ error: NSError?,_ banned: String?){}
     func didCompletedRegister(_ registered: Bool){}
     func didCompleteUpdatingProfile(_ response: ProfileResponse?){}
+    func didCompleteWithSpecialty(_ specialty:[Specialty]?){}
+    func didCompleteAddSpecialty(_ completed: Bool){}
+    func didCompleteWithCountries(_ result: [Country]?){}
 }
 
 class AuthPresenter{
@@ -65,6 +71,42 @@ class AuthPresenter{
                 self.authViewDelegate?.didCompleteUpdatingProfile(response)
             }else{
                 self.authViewDelegate?.didCompleteUpdatingProfile(nil)
+            }
+        }
+    }
+    
+    func getSpecialty(){
+        self.authViewDelegate?.SVProgressStatus(true)
+        AuthServices.getDriversSpecialty { (result) in
+            self.authViewDelegate?.SVProgressStatus(false)
+            if let _ = result{
+                self.authViewDelegate?.didCompleteWithSpecialty(result?.driversSpecialty)
+            }else{
+                self.authViewDelegate?.didCompleteWithSpecialty(nil)
+            }
+        }
+    }
+    
+    func addSpecialty(_ ids: [Int]){
+        self.authViewDelegate?.SVProgressStatus(true)
+        AuthServices.addSpecialty(body: ids) { (done) in
+            self.authViewDelegate?.SVProgressStatus(false)
+            if done{
+                self.authViewDelegate?.didCompleteAddSpecialty(true)
+            }else{
+                self.authViewDelegate?.didCompleteAddSpecialty(false)
+            }
+        }
+    }
+    
+    func getCountries(){
+        self.authViewDelegate?.SVProgressStatus(true)
+        AuthServices.getCountries { (reponse) in
+            self.authViewDelegate?.SVProgressStatus(false)
+            if let _ = reponse{
+                self.authViewDelegate?.didCompleteWithCountries(reponse?.countries.data)
+            }else{
+                self.authViewDelegate?.didCompleteWithCountries(nil)
             }
         }
     }

@@ -254,4 +254,106 @@ class AuthServices{
         
     }
     
+    static func getDriversSpecialty(_ completed: @escaping (DriversSpecialty?)->Void){
+        Alamofire.request(URL(string: DRIVERS_SPECIALTY_API)!, method: .get, parameters: nil, headers: SharedData.headers).responseData { (response) in
+            switch response.result{
+            case .success(let data):
+                do{
+                    
+                    let json = JSON(data)
+                    
+                    if json["status"].stringValue == "200"{
+                        let dataModel = try JSONDecoder().decode(DriversSpecialty.self, from: data)
+                        completed(dataModel)
+                    }else{
+                        completed(nil)
+                    }
+                    
+                }catch let error{
+                    print(error)
+                    completed(nil)
+                }
+            case .failure(let error):
+                print(error)
+                completed(nil)
+            }
+        }
+    }
+    
+    static func addSpecialty(body: [Int], completed: @escaping (Bool)->Void){
+        
+        URLCache.shared.removeAllCachedResponses()
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            
+            for i in 0...body.count-1{
+                multipartFormData.append("\(body[i])".data(using: .utf8)!, withName: "drivers_specialty_id[\(i)]")
+            }
+            
+        }, to: URL(string: ADD_SPECIALTY_API)!, method: .post, headers: SharedData.headers) { (encodingResult) in
+            
+            switch encodingResult{
+                
+            case .success(let uploadRequest,_,_):
+                
+                uploadRequest.responseData { (response) in
+                    
+                    switch response.result{
+                        
+                    case .success(let data):
+                        
+                        print("user",try? JSON(data: data))
+                        
+                        if JSON(data)["status"].stringValue == "200"{
+                            
+                            completed(true)
+                            
+                        }else{
+                            completed(false)
+                        }
+                        
+                    case .failure(let error):
+                        
+                        print("userParseError",error)
+                        completed(false)
+                        
+                    }
+                    
+                }
+                
+            case .failure(let error):
+                
+                print("error",error)
+                completed(false)
+                
+            }
+            
+        }
+        
+    }
+    
+    static func getCountries(_ completed: @escaping (CountriesResponse?)->Void){
+        Alamofire.request(URL(string: COUNTRIES_API)!, method: .get, parameters: nil, headers: SharedData.headers).responseData { (response) in
+            switch response.result{
+            case .success(let data):
+                do{
+                    
+                    let json = JSON(data)
+                    if json["status"].stringValue == "200"{
+                        let dataModel = try JSONDecoder().decode(CountriesResponse.self, from: data)
+                        completed(dataModel)
+                    }else{
+                        completed(nil)
+                    }
+                    
+                }catch let error{
+                    print(error)
+                    completed(nil)
+                }
+            case .failure(let error):
+                print(error)
+                completed(nil)
+            }
+        }
+    }
+    
 }

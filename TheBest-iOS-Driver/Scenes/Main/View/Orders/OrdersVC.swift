@@ -60,7 +60,7 @@ class OrdersVC: UIViewController {
     
     func loadUI(){
         
-        drawerPosition.constant = self.view.frame.width
+        drawerPosition.constant = "lang".localized == "en" ? self.view.frame.width : -self.view.frame.width
         upperView.setupShadow()
         upperView.layer.cornerRadius = upperView.frame.height/2
         

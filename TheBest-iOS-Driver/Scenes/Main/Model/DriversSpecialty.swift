@@ -22,6 +22,7 @@ struct Specialty: Codable {
     let id: Int
     let name: String
     let createdAt, updatedAt: String
+    var selected: Bool?
 
     enum CodingKeys: String, CodingKey {
         case id, name

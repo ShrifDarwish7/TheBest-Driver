@@ -20,6 +20,8 @@ protocol MainViewDelegate{
     func didCompleteWithAddressFromGoogleMapsAPI(_ address: String?)
     func didCompleteWithDirectionFromGoogleMapsAPI(_ polyline: GMSPolyline?)
     func didCompleteAcceptOrder(_ error: Bool)
+    func didCompleteWithProfle(profile: ProfileResponse?)
+    func didCompleteChangeStatus(_ done: Bool)
 }
 
 extension MainViewDelegate{
@@ -33,6 +35,8 @@ extension MainViewDelegate{
     func didCompleteWithAddressFromGoogleMapsAPI(_ address: String?){}
     func didCompleteWithDirectionFromGoogleMapsAPI(_ polyline: GMSPolyline?){}
     func didCompleteAcceptOrder(_ error: Bool){}
+    func didCompleteWithProfle(profile: ProfileResponse?){}
+    func didCompleteChangeStatus(_ done: Bool){}
 }
 
 class MainPresenter{
@@ -154,6 +158,30 @@ class MainPresenter{
                 self.mainViewDelegate?.didCompleteAcceptOrder(false)
             }else{
                 self.mainViewDelegate?.didCompleteAcceptOrder(true)
+            }
+        }
+    }
+    
+    func getProfile(){
+        self.mainViewDelegate?.SVProgressStatus(true)
+        APIServices.getProfile { (response) in
+            self.mainViewDelegate?.SVProgressStatus(false)
+            if let _ = response{
+                self.mainViewDelegate?.didCompleteWithProfle(profile: response)
+            }else{
+                self.mainViewDelegate?.didCompleteWithProfle(profile: nil)
+            }
+        }
+    }
+    
+    func changeOrderStatus(id: String, status: String){
+        self.mainViewDelegate?.SVProgressStatus(true)
+        APIServices.changeOrderStatus(id: id, status: status) { (done) in
+            self.mainViewDelegate?.SVProgressStatus(false)
+            if done{
+                self.mainViewDelegate?.didCompleteChangeStatus(true)
+            }else{
+                self.mainViewDelegate?.didCompleteChangeStatus(false)
             }
         }
     }

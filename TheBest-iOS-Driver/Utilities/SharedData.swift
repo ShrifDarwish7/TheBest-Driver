@@ -18,4 +18,5 @@ class SharedData{
     static var userLat: CLLocationDegrees?
     static var userLng: CLLocationDegrees?
     static var receivedOrder: ReceivedOrder?
+    static var orderOnDeliveryStatus = "on delivery"
 }

@@ -30,6 +30,8 @@ class SignUpVC: UIViewController , UIGestureRecognizerDelegate{
     @IBOutlet weak var addressTF: UITextField!
     @IBOutlet weak var ssidDriverTF: UITextField!
     @IBOutlet weak var pageTitle: UILabel!
+    @IBOutlet weak var specLbl: UILabel!
+    @IBOutlet weak var cntsLbl: UILabel!
     
     var options = [Option]()
     var payOptions = [Option]()
@@ -40,9 +42,13 @@ class SignUpVC: UIViewController , UIGestureRecognizerDelegate{
     var selectedProfileImage: UIImage?
     var authPresenter: AuthPresenter?
     var viewState: ViewState = .Register
+    var selectedCountryId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        specLbl.text = "Specialty".localized
+        cntsLbl.text = "Countries".localized
         
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
@@ -62,50 +68,50 @@ class SignUpVC: UIViewController , UIGestureRecognizerDelegate{
         
         loadUI()
         loadActions()
-        
-        let nib = UINib(nibName: "ChooseCollectionViewCell", bundle: nil)
-        chooseCollection.register(nib, forCellWithReuseIdentifier: "ChooseCollectionViewCell")
-        payTypeChooseCollection.register(nib, forCellWithReuseIdentifier: "ChooseCollectionViewCell")
-        
-        chooseCollection.numberOfItemsInSection { (_) -> Int in
-            return self.options.count
-        }.cellForItemAt { (index) -> UICollectionViewCell in
-            
-            let cell = self.chooseCollection.dequeueReusableCell(withReuseIdentifier: "ChooseCollectionViewCell", for: index) as! ChooseCollectionViewCell
-            cell.loadFrom(option: self.options[index.row])
-            return cell
-            
-        }.didSelectItemAt { (index) in
-            
-            self.options[index.row].selected = !self.options[index.row].selected!
-            self.chooseCollection.reloadData()
-            
-        }.sizeForItemAt { (index) -> CGSize in
-            return CGSize(width: self.chooseCollection.frame.width/2 - 10, height: 35)
-        }
-        
-        payTypeChooseCollection.numberOfItemsInSection { (_) -> Int in
-            return self.payOptions.count
-        }.cellForItemAt { (index) -> UICollectionViewCell in
-            
-            let cell = self.payTypeChooseCollection.dequeueReusableCell(withReuseIdentifier: "ChooseCollectionViewCell", for: index) as! ChooseCollectionViewCell
-            cell.loadFrom(option: self.payOptions[index.row])
-            return cell
-            
-        }.didSelectItemAt { (index) in
-            
-            self.payOptions[index.row].selected = !self.payOptions[index.row].selected!
-            self.payTypeChooseCollection.reloadData()
-            
-        }.sizeForItemAt { (index) -> CGSize in
-            return CGSize(width: self.payTypeChooseCollection.frame.width/3+10, height: 50)
-        }
+//        
+//        let nib = UINib(nibName: "ChooseCollectionViewCell", bundle: nil)
+//        chooseCollection.register(nib, forCellWithReuseIdentifier: "ChooseCollectionViewCell")
+//        payTypeChooseCollection.register(nib, forCellWithReuseIdentifier: "ChooseCollectionViewCell")
+//        
+//        chooseCollection.numberOfItemsInSection { (_) -> Int in
+//            return self.options.count
+//        }.cellForItemAt { (index) -> UICollectionViewCell in
+//            
+//            let cell = self.chooseCollection.dequeueReusableCell(withReuseIdentifier: "ChooseCollectionViewCell", for: index) as! ChooseCollectionViewCell
+//            cell.loadFrom(option: self.options[index.row])
+//            return cell
+//            
+//        }.didSelectItemAt { (index) in
+//            
+//            self.options[index.row].selected = !self.options[index.row].selected!
+//            self.chooseCollection.reloadData()
+//            
+//        }.sizeForItemAt { (index) -> CGSize in
+//            return CGSize(width: self.chooseCollection.frame.width/2 - 10, height: 35)
+//        }
+//        
+//        payTypeChooseCollection.numberOfItemsInSection { (_) -> Int in
+//            return self.payOptions.count
+//        }.cellForItemAt { (index) -> UICollectionViewCell in
+//            
+//            let cell = self.payTypeChooseCollection.dequeueReusableCell(withReuseIdentifier: "ChooseCollectionViewCell", for: index) as! ChooseCollectionViewCell
+//            cell.loadFrom(option: self.payOptions[index.row])
+//            return cell
+//            
+//        }.didSelectItemAt { (index) in
+//            
+//            self.payOptions[index.row].selected = !self.payOptions[index.row].selected!
+//            self.payTypeChooseCollection.reloadData()
+//            
+//        }.sizeForItemAt { (index) -> CGSize in
+//            return CGSize(width: self.payTypeChooseCollection.frame.width/3+10, height: 50)
+//        }
         
         switch viewState {
         case .Update:
             
-            pageTitle.text = "My Profile"
-            sendRequest.setTitle("Update Profile", for: .normal)
+            pageTitle.text = "My Profile".localized
+            sendRequest.setTitle("Update Profile".localized, for: .normal)
             passTF.isHidden = true
             nameTF.text = AuthServices.instance.profile.name
             emailTF.text = AuthServices.instance.profile.email
@@ -234,16 +240,16 @@ class SignUpVC: UIViewController , UIGestureRecognizerDelegate{
             ssidfront: selectedSSIDFront, ssidback: selectedSSIDBack,
             address: addressTF.text!,
             passport: selectedPassport,
-            phone_intreal: phoneIntrakTF.text!, country_id: "", car_company_id: "")
+            phone_intreal: phoneIntrakTF.text!, country_id: "\(self.selectedCountryId ?? 0)", car_company_id: "")
 
         switch viewState {
         case .Register:
             guard !nameTF.text!.isEmpty, !addressTF.text!.isEmpty, !ssidDriverTF.text!.isEmpty, !emailTF.text!.isEmpty, !passTF.text!.isEmpty, !phoneTf.text!.isEmpty, !phoneIntrakTF.text!.isEmpty else {
-                showAlert(title: "", message: "Please fill all required registeration fields")
+                showAlert(title: "", message: "Please fill all required fields")
                 return
             }
             guard let _ = selectedProfileImage, let _ = selectedImageCert, let _ = selectedSSIDFront, let _ = selectedSSIDBack, let _ = selectedPassport else {
-                showAlert(title: "", message: "Please upload all required registeration images")
+                showAlert(title: "", message: "Please upload all required images")
                 return
             }
             authPresenter?.registerWith(info: driverInfo)
@@ -254,6 +260,13 @@ class SignUpVC: UIViewController , UIGestureRecognizerDelegate{
         
     }
     
+    @IBAction func goToSelection(_ sender: Any){
+        Router.toSelection(self)
+    }
+    
+    @IBAction func goToCountriesSelection(_ sender: Any){
+        Router.toCountriesSelection(self)
+    }
     
 }
 
