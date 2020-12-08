@@ -9,9 +9,10 @@
 import UIKit
 import CoreLocation
 import GoogleMaps
+import SwiftToast
 
-class HomeVC: UIViewController {
-
+class HomeVC: UIViewController{
+    
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var upperView: UIView!
     @IBOutlet weak var notificationBtn: UIButton!
@@ -43,14 +44,36 @@ class HomeVC: UIViewController {
     @IBOutlet weak var goBtn: UIButton!
     @IBOutlet weak var clientName: UILabel!
     @IBOutlet weak var clientPhone: UILabel!
+    @IBOutlet weak var draggableView: UIView!
+    @IBOutlet weak var bottomSheetTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var draggableSubView: UIView!
+    @IBOutlet weak var rideTypeIcon: UIImageView!
+    @IBOutlet weak var rideType: UILabel!
     
     let locationManager = CLLocationManager()
     var mainPresenter: MainPresenter?
     var marker = GMSMarker()
     var camera: GMSCameraPosition?
+    var bottomSheetPanStartingTopConstant : CGFloat = 30.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        topView.isHidden = true
+        
+        let viewPan = UIPanGestureRecognizer(target: self, action: #selector(viewPanned(_:)))
+        viewPan.delaysTouchesBegan = false
+        viewPan.delaysTouchesEnded = false
+        self.bottomSheetView.addGestureRecognizer(viewPan)
+        
+        draggableView.addTapGesture { (_) in
+            self.bottomSheetTopConstraint.constant = 400
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, animations: {
+                self.view.layoutIfNeeded()
+            }) { (_) in
+                
+            }
+        }
         
         bottomSheetPosition.constant = -400
         NotificationCenter.default.addObserver(self, selector: #selector(closeDrawer), name: NSNotification.Name(rawValue: "CloseDrawer"), object: nil)
@@ -98,10 +121,55 @@ class HomeVC: UIViewController {
         Drawer.close(drawerPosition, self)
     }
     
+    @objc func viewPanned(_ panRecognizer: UIPanGestureRecognizer){
+        let translation = panRecognizer.translation(in: self.view)
+        let velocity = panRecognizer.velocity(in: self.view)
+    
+        switch panRecognizer.state {
+        case .began:
+            bottomSheetPanStartingTopConstant = self.bottomSheetTopConstraint.constant
+        case .changed:
+            
+            if self.bottomSheetPanStartingTopConstant + translation.y > 110 {
+                self.bottomSheetTopConstraint.constant = self.bottomSheetPanStartingTopConstant + translation.y
+            }
+
+        case .ended:
+            print(velocity.y)
+            if velocity.y > 1500.0 {
+                
+                let safeAreaHeight = UIApplication.shared.keyWindow?.safeAreaLayoutGuide.layoutFrame.size.height
+             //   let bottomPadding = UIApplication.shared.keyWindow?.safeAreaInsets.bottom
+                self.bottomSheetTopConstraint.constant = safeAreaHeight! - CGFloat(35)
+                
+              UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, animations: {
+                  self.view.layoutIfNeeded()
+              }) { (_) in
+                
+                }
+            }else if velocity.y < 10{
+                
+                self.bottomSheetTopConstraint.constant = UIApplication.shared.statusBarFrame.height + CGFloat(110)
+                
+                UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, animations: {
+                    self.view.layoutIfNeeded()
+                }) { (_) in
+                    
+                }
+                
+            }
+            
+        default:
+            break
+        }
+    }
+    
     func loadUI(){
         
-        bottomSheetView.setupShadow()
-        bottomSheetView.layer.cornerRadius = 15
+        draggableSubView.layer.cornerRadius = draggableSubView.frame.height/2
+       // bottomSheetView.setupShadow()
+        bottomSheetView.clipsToBounds = true
+        bottomSheetView.roundCorners([.layerMinXMinYCorner,.layerMaxXMinYCorner], radius: 15)
         fromView.layer.cornerRadius = fromView.frame.height/2
         fromView.layer.borderWidth = 1.5
         fromView.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -113,7 +181,7 @@ class HomeVC: UIViewController {
         orderInfo.layer.cornerRadius = 15
         topView.layer.cornerRadius = 15
         
-        drawerPosition.constant = "lang".localized == "en" ? self.view.frame.width : -self.view.frame.width
+        drawerPosition.constant = "lang".localized == "ar" ? self.view.frame.width : -self.view.frame.width
         upperView.setupShadow()
         upperView.layer.cornerRadius = upperView.frame.height/2
         
@@ -132,6 +200,9 @@ class HomeVC: UIViewController {
             clientName.text = SharedData.receivedOrder?.clientName
             clientPhone.text = SharedData.receivedOrder?.clientPhone
             mainPresenter?.getAdressWith(location: "\(SharedData.receivedOrder?.clientLat ?? ""),\(SharedData.receivedOrder?.clientLng ?? "")")
+            if let _ = SharedData.receivedOrder?.tripID{
+                mainPresenter?.getTripBy(id: SharedData.receivedOrder!.tripID)
+            }
             UIView.animate(withDuration: 0.3) {
                 self.acceptOrderBtn.isHidden = false
                 self.denyOrderBtn.isHidden = false
@@ -144,9 +215,11 @@ class HomeVC: UIViewController {
     
     func showBottomSheet(){
         //self.blockView.isHidden = false
+        self.bottomSheetView.isHidden = false
+        self.bottomSheetTopConstraint.constant = 400
         UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, animations: {
           //  self.blockView.alpha = 1
-            self.bottomSheetPosition.constant = 15
+       //     self.bottomSheetPosition.constant = 15
             self.view.layoutIfNeeded()
         }) { (_) in
             
@@ -170,6 +243,10 @@ class HomeVC: UIViewController {
         }) { (_) in
             self.blockView.isHidden = true
         }
+    }
+    
+    @IBAction func arrivedAction(_ sender: Any) {
+        mainPresenter?.confirmDriverHere(id: SharedData.receivedOrder!.clientID)
     }
     
     

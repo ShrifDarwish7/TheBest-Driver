@@ -98,7 +98,9 @@ PODS:
     - SDWebImage/Core (= 5.8.0)
   - SDWebImage/Core (5.8.0)
   - SVProgressHUD (2.2.5)
+  - SwiftToast (1.1.3)
   - SwiftyJSON (5.0.0)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -112,7 +114,9 @@ DEPENDENCIES:
   - MOLH
   - SDWebImage
   - SVProgressHUD
+  - SwiftToast
   - SwiftyJSON
+  - Toast-Swift
 
 SPEC REPOS:
   trunk:
@@ -143,7 +147,9 @@ SPEC REPOS:
     - Protobuf
     - SDWebImage
     - SVProgressHUD
+    - SwiftToast
     - SwiftyJSON
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -173,8 +179,10 @@ SPEC CHECKSUMS:
   Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftToast: 029cbeda85c04fb3fa5df774ba461b19971bc6c5
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 140790b5b7a27a67c0e1e29fa6b80cf0eed7cbb6
+PODFILE CHECKSUM: 7a98f30334d8990b2e31a41de7c5fbd36bd397ca
 
 COCOAPODS: 1.9.1

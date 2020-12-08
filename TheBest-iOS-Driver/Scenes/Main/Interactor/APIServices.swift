@@ -254,28 +254,51 @@ class APIServices{
     }
     
     static func hereDriver(_ id: String, _ completed: @escaping (Bool)->Void){
-        Alamofire.request(URL(string: HERE_DRIVER_API + id)!, method: .get, parameters: nil, headers: SharedData.headers).responseData { (response) in
-            switch response.result{
-            case .success(let data):
-                do{
+        
+        URLCache.shared.removeAllCachedResponses()
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            
+        }, to: URL(string: HERE_DRIVER_API + id)!, method: .post, headers: SharedData.headers) { (encodingResult) in
+            
+            switch encodingResult{
+                
+            case .success(let uploadRequest,_,_):
+                
+                uploadRequest.responseData { (response) in
                     
-                    let json = JSON(data)
-                    
-                    if json["status"].stringValue == "200"{
-                        completed(true)
-                    }else{
+                    switch response.result{
+                    case .success(let data):
+                        do{
+                            
+                            let json = JSON(data)
+                            
+                            if json["masseage"].stringValue == "Notification send"{
+                                completed(true)
+                            }else{
+                                completed(false)
+                            }
+                            
+                        }catch let error{
+                            print(error)
+                            completed(false)
+                        }
+                    case .failure(let error):
+                        print(error)
                         completed(false)
                     }
                     
-                }catch let error{
-                    print(error)
-                    completed(false)
                 }
+                
             case .failure(let error):
-                print(error)
+                
+                print("error",error)
                 completed(false)
+                
             }
+            
         }
+        
+       
     }
     
     static func getDriverReports(_ from: String,_ to: String, completed: @escaping (ReportsResponse?)->Void){
@@ -404,6 +427,7 @@ class APIServices{
             multipartFormData.append(lat.data(using: String.Encoding.utf8)!, withName: "lat")
             multipartFormData.append(lng.data(using: String.Encoding.utf8)!, withName: "lng")
             multipartFormData.append("\(id)".data(using: String.Encoding.utf8)!, withName: "driver_id")
+            multipartFormData.append("\(SharedData.receivedOrder?.tripID ?? "")".data(using: String.Encoding.utf8)!, withName: "trip_id")
             
         }, to: URL(string: ACCEPT_ORDER_API + "\(clientID)")!, method: .post, headers: SharedData.headers) { (encodingResult) in
             

@@ -34,13 +34,38 @@ extension HomeVC: MainViewDelegate{
     
     func didCompleteAcceptOrder(_ error: Bool) {
         if !error{
-         //   self.mainPresenter?.changeOrderStatus(id: <#T##String#>, status: <#T##String#>)
+            if let _ = SharedData.receivedOrder?.tripID{
+                self.mainPresenter?.changeOrderStatus(id: SharedData.receivedOrder!.tripID, status: SharedData.orderOnDeliveryStatus)
+            }
+        }
+    }
+    
+    func didCompleteWithTripByID(_ trip: MyTrip?) {
+        if let _ = trip{
+            print("didCompleteWithTripByID", trip)
+            self.topView.backgroundColor = SharedData.getColor((trip?.rideType)!)
+            self.rideTypeIcon.image = SharedData.getRideType((trip?.rideType)!).icon
+            self.rideType.text = SharedData.getRideType((trip?.rideType)!).name
+        }
+    }
+    
+    func didCompleteChangeStatus(_ done: Bool) {
+        if done{
+            print("didCompleteChangeStatus")
             UIView.animate(withDuration: 0.3) {
                 self.acceptOrderBtn.isHidden = true
                 self.denyOrderBtn.isHidden = true
                 self.endRideBtn.isHidden = false
                 self.goBtn.isHidden = false
             }
+        }
+    }
+    
+    func didCompleteConfirmDriverHere(_ error: Bool) {
+        if !error{
+            print("didCompleteConfirmDriverHere success")
+        }else{
+            print("didCompleteConfirmDriverHere faild")
         }
     }
     

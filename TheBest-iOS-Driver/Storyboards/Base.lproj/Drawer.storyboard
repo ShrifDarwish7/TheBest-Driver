@@ -26,11 +26,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6t-Hu-8eo">
-                                <rect key="frame" x="0.0" y="0.0" width="103.5" height="896"/>
+                                <rect key="frame" x="310.5" y="0.0" width="103.5" height="896"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITa-s2-PA2">
-                                <rect key="frame" x="103.5" y="0.0" width="310.5" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="310.5" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Path 234" translatesAutoresizingMaskIntoConstraints="NO" id="3UC-IE-ZCz">
                                         <rect key="frame" x="-9" y="-15" width="329.5" height="313.5"/>
@@ -318,14 +318,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Z6t-Hu-8eo" firstAttribute="top" secondItem="h3L-CR-2gY" secondAttribute="top" id="4db-iD-Al8"/>
+                            <constraint firstItem="ITa-s2-PA2" firstAttribute="leading" secondItem="6FZ-cX-tgv" secondAttribute="leading" id="77G-dA-VJA"/>
                             <constraint firstAttribute="bottom" secondItem="ITa-s2-PA2" secondAttribute="bottom" id="7G6-ic-xfT"/>
+                            <constraint firstItem="Z6t-Hu-8eo" firstAttribute="leading" secondItem="ITa-s2-PA2" secondAttribute="trailing" id="8l1-hj-qmp"/>
                             <constraint firstItem="Z6t-Hu-8eo" firstAttribute="width" secondItem="h3L-CR-2gY" secondAttribute="width" multiplier="0.25" id="C3a-7l-Fyq"/>
                             <constraint firstItem="jie-jA-qsl" firstAttribute="top" secondItem="6FZ-cX-tgv" secondAttribute="top" id="Fxn-gN-rrK"/>
                             <constraint firstAttribute="bottom" secondItem="Z6t-Hu-8eo" secondAttribute="bottom" id="KwP-cD-DW6"/>
+                            <constraint firstItem="6FZ-cX-tgv" firstAttribute="trailing" secondItem="Z6t-Hu-8eo" secondAttribute="trailing" id="XdF-iN-ZrQ"/>
                             <constraint firstItem="ITa-s2-PA2" firstAttribute="top" secondItem="h3L-CR-2gY" secondAttribute="top" id="jkR-to-Kwh"/>
-                            <constraint firstItem="Z6t-Hu-8eo" firstAttribute="leading" secondItem="6FZ-cX-tgv" secondAttribute="leading" id="k3O-u7-ItY"/>
-                            <constraint firstItem="ITa-s2-PA2" firstAttribute="leading" secondItem="Z6t-Hu-8eo" secondAttribute="trailing" id="sE8-Sl-A4h"/>
-                            <constraint firstItem="6FZ-cX-tgv" firstAttribute="trailing" secondItem="ITa-s2-PA2" secondAttribute="trailing" id="vIZ-ad-uya"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6FZ-cX-tgv"/>
                     </view>

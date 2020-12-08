@@ -15,6 +15,7 @@ import GoogleMaps
 import GooglePlaces
 import FirebaseMessaging
 import MOLH
+import SwiftToast
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -50,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     let mainStoryboard = UIStoryboard(name: "Main" , bundle: nil)
                     let protectedPage = mainStoryboard.instantiateViewController(withIdentifier: "NavHome") as! UINavigationController
                     rootViewController.rootViewController = protectedPage
-                    window!.makeKeyAndVisible()
+                    self.window!.makeKeyAndVisible()
                 }
 
             }
@@ -120,20 +121,47 @@ extension AppDelegate: MessagingDelegate{
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
         SharedData.receivedOrder = ReceivedOrder(userInfo: userInfo)
-                
+        SharedData.receivedPushNotification = userInfo
+        print(userInfo)
+        
         let navController = self.window?.rootViewController as! UINavigationController
         if !(navController.visibleViewController?.isKind(of: HomeVC.self))!{
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
-            navController.pushViewController(homeVC, animated: true)
+            
+            guard
+            let aps = userInfo[AnyHashable("aps")] as? NSDictionary,
+            let alert = aps["alert"] as? NSDictionary,
+            let body = alert["body"] as? String
+            else { return }
+            
+            if let vc = navController.visibleViewController{
+                let toast =  SwiftToast(
+                    text: body.localized,
+                    textAlignment: "lang".localized == "en" ? .left : .right ,
+                    image: UIImage(),
+                    backgroundColor: UIColor(named: "MainColor"),
+                    textColor: .white,
+                    font: .boldSystemFont(ofSize: 13),
+                    duration: 2.0,
+                    minimumHeight: CGFloat(65),
+                    statusBarStyle: .lightContent,
+                    aboveStatusBar: false,
+                    target: (vc as SwiftToastDelegate),
+                    style: .navigationBar)
+                vc.present(toast, animated: true)
+            }
+            
+        }else{
+            NotificationCenter.default.post(name: NSNotification.Name("ReceivedOrderFromFCM"), object: nil, userInfo: userInfo)
         }
-        NotificationCenter.default.post(name: NSNotification.Name("ReceivedOrderFromFCM"), object: nil, userInfo: userInfo)
+        
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("fcmTokenHere",fcmToken)
         UserDefaults.init().set(fcmToken, forKey: "FCM_Token")
     }
+    
+    
 }
 
 extension String{
@@ -151,7 +179,7 @@ extension AppDelegate:  MOLHResetable {
                 let mainStoryboard = UIStoryboard(name: "Main" , bundle: nil)
                 let protectedPage = mainStoryboard.instantiateViewController(withIdentifier: "NavHome") as! UINavigationController
                 sd.window!.rootViewController = protectedPage
-                window!.makeKeyAndVisible()
+                self.window!.makeKeyAndVisible()
             }
         }
     }
@@ -164,14 +192,14 @@ extension AppDelegate:  MOLHResetable {
                 let mainStoryboard = UIStoryboard(name: "Main" , bundle: nil)
                 let protectedPage = mainStoryboard.instantiateViewController(withIdentifier: "NavHome") as! UINavigationController
                 rootViewController.rootViewController = protectedPage
-                window!.makeKeyAndVisible()
+                self.window!.makeKeyAndVisible()
             }
         }
     }
     static func changeLangTo(_ lang: String){
+        
         MOLHLanguage.setDefaultLanguage("en")
         MOLH.setLanguageTo(lang)
-        
         
         if #available(iOS 13.0, *) {
             let delegate = UIApplication.shared.delegate as? AppDelegate
@@ -180,4 +208,24 @@ extension AppDelegate:  MOLHResetable {
             MOLH.reset()
         }
     }
+}
+
+extension UIViewController: SwiftToastDelegate{
+    public func swiftToastDidTouchUpInside(_ swiftToast: SwiftToastProtocol) {
+        guard
+            let aps = SharedData.receivedPushNotification![AnyHashable("aps")] as? NSDictionary,
+            let alert = aps["alert"] as? NSDictionary,
+            let body = alert["body"] as? String
+            else { return }
+                
+        if body == "You have trip request"{
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeVC") as! HomeVC
+            self.navigationController?.pushViewController(homeVC, animated: true)
+            
+        }
+        
+    }
+    
 }

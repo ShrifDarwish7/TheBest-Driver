@@ -10,6 +10,7 @@ import Foundation
 
 struct ReceivedOrder {
     
+    var tripID: String
     var clientID: String
     var clientName: String
     var clientPhone: String
@@ -17,6 +18,7 @@ struct ReceivedOrder {
     var clientLng: String
     
     init(userInfo: [AnyHashable : Any]) {
+        tripID = userInfo["trip_id"] as? String ?? ""
         clientID = userInfo["user_id"] as? String ?? ""
         clientName = userInfo["name"] as? String ?? ""
         clientPhone = userInfo["phone"] as? String ?? ""
