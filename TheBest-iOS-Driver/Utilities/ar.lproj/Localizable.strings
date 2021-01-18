@@ -17,3 +17,7 @@
 "Specialty" = "التخصص";
 "Countries" = "البلاد";
 "You have trip request" = "لديك طلب رحلة";
+"Start ride" = "بدأ الرحلة";
+"End ride" = "إنهاء الرحلة";
+"Trip ended successfully" = "تم إنهاء الرحلة بنجاح";
+"Cancel trip" = "إلغاء الرحلة";

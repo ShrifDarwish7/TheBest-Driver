@@ -22,6 +22,8 @@ class IncomingOrderTableViewCell: UITableViewCell {
     @IBOutlet weak var addressFrom: UILabel!
     @IBOutlet weak var addressTo: UILabel!
     @IBOutlet weak var total: UILabel!
+    @IBOutlet weak var typeImage: UIImageView!
+    @IBOutlet weak var typeName: UILabel!
     
     func loadUI(){
         containerView.setupShadow()
@@ -43,7 +45,10 @@ class IncomingOrderTableViewCell: UITableViewCell {
         statusLbl.text = trip.status
         addressFrom.text = trip.addressFrom
         addressTo.text = trip.addressTo
-        total.text = "\(trip.total)" + " " + "KWD"
+        total.text = "\(trip.total ?? "0.0")" + " " + "KWD"
+        self.topView.backgroundColor = SharedData.getColor((trip.rideType) ?? 40)
+        self.typeImage.image = SharedData.getRideType((trip.rideType) ?? 40).icon
+        self.typeName.text = SharedData.getRideType((trip.rideType) ?? 40).name
     }
     
 }

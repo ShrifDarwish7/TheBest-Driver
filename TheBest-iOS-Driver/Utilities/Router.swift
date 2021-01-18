@@ -65,4 +65,19 @@ class Router{
         sender.navigationController?.pushViewController(vc, animated: true)
     }
     
+    static func toTripInfo(_ sender: UIViewController, trip: MyTrip){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TripInfoVC") as! TripInfoVC
+        vc.modalPresentationStyle = .formSheet
+        vc.trip = trip
+        sender.present(vc, animated: true)
+    }
+    
+    static func toCancelation(_ sender: UIViewController){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CancelationVC") as! CancelationVC
+        vc.modalPresentationStyle = .formSheet
+        sender.present(vc, animated: true, completion: nil)
+    }
+    
 }

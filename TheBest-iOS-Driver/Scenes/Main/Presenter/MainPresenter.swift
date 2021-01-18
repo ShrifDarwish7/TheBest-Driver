@@ -22,6 +22,8 @@ protocol MainViewDelegate{
     func didCompleteAcceptOrder(_ error: Bool)
     func didCompleteWithProfle(profile: ProfileResponse?)
     func didCompleteChangeStatus(_ done: Bool)
+    func didCompleteStartRide(_ done: Bool)
+    func didCompleteEndRide(_ done: Bool)
 }
 
 extension MainViewDelegate{
@@ -37,6 +39,8 @@ extension MainViewDelegate{
     func didCompleteAcceptOrder(_ error: Bool){}
     func didCompleteWithProfle(profile: ProfileResponse?){}
     func didCompleteChangeStatus(_ done: Bool){}
+    func didCompleteStartRide(_ done: Bool){}
+    func didCompleteEndRide(_ done: Bool){}
 }
 
 class MainPresenter{
@@ -64,12 +68,11 @@ class MainPresenter{
         APIServices.getTripBy(id) { (reponse) in
             self.mainViewDelegate?.SVProgressStatus(false)
             if let _ = reponse{
-                self.mainViewDelegate?.didCompleteWithTripByID(reponse?.trip)
+                self.mainViewDelegate?.didCompleteWithTripByID(reponse?.trip.first)
             }else{
                 self.mainViewDelegate?.didCompleteWithTripByID(nil)
             }
         }
-        
     }
     
     func confirmEndRideBy(id: String, comment: String, status: String){
@@ -182,6 +185,30 @@ class MainPresenter{
                 self.mainViewDelegate?.didCompleteChangeStatus(true)
             }else{
                 self.mainViewDelegate?.didCompleteChangeStatus(false)
+            }
+        }
+    }
+    
+    func startRide(id: String, trip: MyTrip){
+        self.mainViewDelegate?.SVProgressStatus(true)
+        APIServices.startRide(id, trip) { (done) in
+            self.mainViewDelegate?.SVProgressStatus(false)
+            if done{
+                self.mainViewDelegate?.didCompleteStartRide(true)
+            }else{
+                self.mainViewDelegate?.didCompleteStartRide(false)
+            }
+        }
+    }
+    
+    func endRide(id: String, total: String){
+        self.mainViewDelegate?.SVProgressStatus(true)
+        APIServices.endRide(id, total) { (done) in
+            self.mainViewDelegate?.SVProgressStatus(false)
+            if done{
+                self.mainViewDelegate?.didCompleteEndRide(true)
+            }else{
+                self.mainViewDelegate?.didCompleteEndRide(false)
             }
         }
     }

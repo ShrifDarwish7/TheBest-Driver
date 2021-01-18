@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103A95C625953E250000F3C7 /* TripInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103A95C525953E250000F3C7 /* TripInfoVC.swift */; };
+		103DADB625AB2822008B6360 /* RaasonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103DADB425AB2820008B6360 /* RaasonTableViewCell.swift */; };
+		103DADB725AB2822008B6360 /* RaasonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 103DADB525AB2822008B6360 /* RaasonTableViewCell.xib */; };
+		103DADBD25AB2852008B6360 /* CancelationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103DADBC25AB2852008B6360 /* CancelationVC.swift */; };
+		104389CA25B2EC76000329C6 /* loud_alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 104389C925B2EC76000329C6 /* loud_alert.mp3 */; };
+		1065DED925AF22D400627652 /* OrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1065DED725AF22D200627652 /* OrdersTableViewCell.xib */; };
+		1065DEDA25AF22D400627652 /* OrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1065DED825AF22D400627652 /* OrdersTableViewCell.swift */; };
+		1065DEDE25AF22E700627652 /* OrdersItemsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1065DEDC25AF22E500627652 /* OrdersItemsTableViewCell.xib */; };
+		1065DEDF25AF22E700627652 /* OrdersItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1065DEDD25AF22E700627652 /* OrdersItemsTableViewCell.swift */; };
+		1065DEE625AF246000627652 /* HomeVC+TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1065DEE525AF246000627652 /* HomeVC+TableViewDelegate.swift */; };
+		1079B11A25AA02A0008221D6 /* loud_beeps.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1079B11925AA02A0008221D6 /* loud_beeps.mp3 */; };
+		10CDDB4425B1EA34002AA6CE /* Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CDDB4325B1EA34002AA6CE /* Distance.swift */; };
 		AA241A482563EFB5000BB035 /* SelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA241A472563EFB5000BB035 /* SelectionVC.swift */; };
 		AA2D297F254D92880039A53A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA2D297E254D92880039A53A /* GoogleService-Info.plist */; };
 		AA3D2925252771740083FD54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2924252771740083FD54 /* AppDelegate.swift */; };
@@ -26,7 +38,6 @@
 		AA3D2950252774760083FD54 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2946252774750083FD54 /* Lato-ThinItalic.ttf */; };
 		AA3D2951252774760083FD54 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2947252774760083FD54 /* Lato-Italic.ttf */; };
 		AA3D2952252774760083FD54 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA3D2948252774760083FD54 /* Lato-BoldItalic.ttf */; };
-		AA3D2959252775380083FD54 /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2953252775370083FD54 /* CustomViews.swift */; };
 		AA3D295A252775380083FD54 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2954252775370083FD54 /* Images.swift */; };
 		AA3D295B252775380083FD54 /* Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2955252775370083FD54 /* Drawer.swift */; };
 		AA3D295C252775380083FD54 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3D2956252775370083FD54 /* Alert.swift */; };
@@ -78,6 +89,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		103A95C525953E250000F3C7 /* TripInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripInfoVC.swift; sourceTree = "<group>"; };
+		103DADB425AB2820008B6360 /* RaasonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaasonTableViewCell.swift; sourceTree = "<group>"; };
+		103DADB525AB2822008B6360 /* RaasonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RaasonTableViewCell.xib; sourceTree = "<group>"; };
+		103DADBC25AB2852008B6360 /* CancelationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelationVC.swift; sourceTree = "<group>"; };
+		104389C925B2EC76000329C6 /* loud_alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = loud_alert.mp3; sourceTree = "<group>"; };
+		1065DED725AF22D200627652 /* OrdersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrdersTableViewCell.xib; sourceTree = "<group>"; };
+		1065DED825AF22D400627652 /* OrdersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersTableViewCell.swift; sourceTree = "<group>"; };
+		1065DEDC25AF22E500627652 /* OrdersItemsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrdersItemsTableViewCell.xib; sourceTree = "<group>"; };
+		1065DEDD25AF22E700627652 /* OrdersItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersItemsTableViewCell.swift; sourceTree = "<group>"; };
+		1065DEE525AF246000627652 /* HomeVC+TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+TableViewDelegate.swift"; sourceTree = "<group>"; };
+		1079B11925AA02A0008221D6 /* loud_beeps.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = loud_beeps.mp3; sourceTree = "<group>"; };
+		10CDDB4325B1EA34002AA6CE /* Distance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Distance.swift; sourceTree = "<group>"; };
 		1B90ED3A8A644E837F39195F /* Pods-TheBest-iOS-Driver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBest-iOS-Driver.release.xcconfig"; path = "Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver.release.xcconfig"; sourceTree = "<group>"; };
 		5D7CAB46C20E910D6CF66A88 /* Pods_TheBest_iOS_Driver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheBest_iOS_Driver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F95078B49ED869431025FA /* Pods-TheBest-iOS-Driver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheBest-iOS-Driver.debug.xcconfig"; path = "Target Support Files/Pods-TheBest-iOS-Driver/Pods-TheBest-iOS-Driver.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,7 +125,6 @@
 		AA3D2946252774750083FD54 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
 		AA3D2947252774760083FD54 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
 		AA3D2948252774760083FD54 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
-		AA3D2953252775370083FD54 /* CustomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 		AA3D2954252775370083FD54 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		AA3D2955252775370083FD54 /* Drawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawer.swift; sourceTree = "<group>"; };
 		AA3D2956252775370083FD54 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -170,6 +192,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		103A95C425953DFD0000F3C7 /* TripInfo */ = {
+			isa = PBXGroup;
+			children = (
+				103A95C525953E250000F3C7 /* TripInfoVC.swift */,
+			);
+			path = TripInfo;
+			sourceTree = "<group>";
+		};
+		103DADB925AB2828008B6360 /* CancelationReasons */ = {
+			isa = PBXGroup;
+			children = (
+				103DADB425AB2820008B6360 /* RaasonTableViewCell.swift */,
+				103DADB525AB2822008B6360 /* RaasonTableViewCell.xib */,
+			);
+			path = CancelationReasons;
+			sourceTree = "<group>";
+		};
+		1065DEE125AF22F100627652 /* OrderItems */ = {
+			isa = PBXGroup;
+			children = (
+				1065DEDD25AF22E700627652 /* OrdersItemsTableViewCell.swift */,
+				1065DEDC25AF22E500627652 /* OrdersItemsTableViewCell.xib */,
+			);
+			path = OrderItems;
+			sourceTree = "<group>";
+		};
+		1065DEE325AF22FA00627652 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				1065DED825AF22D400627652 /* OrdersTableViewCell.swift */,
+				1065DED725AF22D200627652 /* OrdersTableViewCell.xib */,
+			);
+			path = Order;
+			sourceTree = "<group>";
+		};
 		A728EF6E5FB3FE28C1E49E4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +295,8 @@
 				AA3D292D252771740083FD54 /* TheBest_iOS_Driver.xcdatamodeld */,
 				AAD7BEC82527E6C2004BB98F /* Router.swift */,
 				AAFDB536252F676E000512A7 /* APIs.swift */,
+				104389C925B2EC76000329C6 /* loud_alert.mp3 */,
+				1079B11925AA02A0008221D6 /* loud_beeps.mp3 */,
 				AAFDB538252F681A000512A7 /* SharedData.swift */,
 				AA3DC24A255573F70030E623 /* MapSilverStyle.json */,
 				AAE109B92561782C0026500A /* Localizable.strings */,
@@ -266,7 +325,6 @@
 			isa = PBXGroup;
 			children = (
 				AA3D2956252775370083FD54 /* Alert.swift */,
-				AA3D2953252775370083FD54 /* CustomViews.swift */,
 				AA3D2955252775370083FD54 /* Drawer.swift */,
 				AA3D2958252775380083FD54 /* Gradient.swift */,
 				AA3D2954252775370083FD54 /* Images.swift */,
@@ -305,6 +363,7 @@
 				AAD2A316252B174100E11391 /* HomeVC.swift */,
 				AABBB29C2539008E009A8DE7 /* HomeVC+MainViewDelegate.swift */,
 				AAFA315E255157C40080C50A /* HomeVC+CLLocationManagerDelegate.swift */,
+				1065DEE525AF246000627652 /* HomeVC+TableViewDelegate.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -348,6 +407,7 @@
 				AABBB2A025390A06009A8DE7 /* TripByIdResponse.swift */,
 				AA5DF091254E10060023A485 /* ReportsResponse.swift */,
 				AAB1A16B2552D37700065179 /* ReceivedOrder.swift */,
+				10CDDB4325B1EA34002AA6CE /* Distance.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -366,6 +426,8 @@
 				AAFA3157255154F70080C50A /* Orders */,
 				AA5DF089254E0EB60023A485 /* Home */,
 				AA5DF08A254E0EC00023A485 /* Reports */,
+				103DADBC25AB2852008B6360 /* CancelationVC.swift */,
+				103A95C425953DFD0000F3C7 /* TripInfo */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +435,9 @@
 		AAD2A318252B25D100E11391 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
+				1065DEE125AF22F100627652 /* OrderItems */,
+				1065DEE325AF22FA00627652 /* Order */,
+				103DADB925AB2828008B6360 /* CancelationReasons */,
 				AAD2A319252B25E000E11391 /* IncomingOrder */,
 			);
 			path = XIBs;
@@ -537,14 +602,18 @@
 			files = (
 				AA2D297F254D92880039A53A /* GoogleService-Info.plist in Resources */,
 				AA3D2949252774760083FD54 /* Lato-BlackItalic.ttf in Resources */,
+				1079B11A25AA02A0008221D6 /* loud_beeps.mp3 in Resources */,
+				103DADB725AB2822008B6360 /* RaasonTableViewCell.xib in Resources */,
 				AAE73CA5252A0957009584B9 /* ChooseCollectionViewCell.xib in Resources */,
 				AA3D294F252774760083FD54 /* Lato-LightItalic.ttf in Resources */,
 				AA3DC24B255573F70030E623 /* MapSilverStyle.json in Resources */,
+				1065DEDE25AF22E700627652 /* OrdersItemsTableViewCell.xib in Resources */,
 				AA3D294B252774760083FD54 /* Lato-Regular.ttf in Resources */,
 				AA3D294C252774760083FD54 /* Lato-Thin.ttf in Resources */,
 				AAD2A31D252B25FA00E11391 /* IncomingOrderTableViewCell.xib in Resources */,
 				AA3D2934252771770083FD54 /* LaunchScreen.storyboard in Resources */,
 				AA3D2931252771770083FD54 /* Assets.xcassets in Resources */,
+				1065DED925AF22D400627652 /* OrdersTableViewCell.xib in Resources */,
 				AA3D294A252774760083FD54 /* Lato-Black.ttf in Resources */,
 				AA3D2950252774760083FD54 /* Lato-ThinItalic.ttf in Resources */,
 				AA3D292C252771740083FD54 /* Main.storyboard in Resources */,
@@ -554,6 +623,7 @@
 				AAE109B72561782C0026500A /* Localizable.strings in Resources */,
 				AA3D294D252774760083FD54 /* Lato-Light.ttf in Resources */,
 				AA3D2952252774760083FD54 /* Lato-BoldItalic.ttf in Resources */,
+				104389CA25B2EC76000329C6 /* loud_alert.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,6 +694,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA3D2929252771740083FD54 /* LoginVC.swift in Sources */,
+				1065DEDF25AF22E700627652 /* OrdersItemsTableViewCell.swift in Sources */,
 				AAE109C3256179040026500A /* UIComponentsHelpers.swift in Sources */,
 				AABBB29F2539048F009A8DE7 /* DriverReports.swift in Sources */,
 				AAFA315B2551562D0080C50A /* OrdersVC+MainViewDelegate.swift in Sources */,
@@ -632,6 +703,7 @@
 				AA3D2925252771740083FD54 /* AppDelegate.swift in Sources */,
 				AAD7BEC72527DF81004BB98F /* SignUpVC.swift in Sources */,
 				AABBB29D2539008E009A8DE7 /* HomeVC+MainViewDelegate.swift in Sources */,
+				1065DEE625AF246000627652 /* HomeVC+TableViewDelegate.swift in Sources */,
 				AAFA315F255157C40080C50A /* HomeVC+CLLocationManagerDelegate.swift in Sources */,
 				AAFDB530252F6635000512A7 /* AuthPresenter.swift in Sources */,
 				AAD7BEC92527E6C2004BB98F /* Router.swift in Sources */,
@@ -639,10 +711,10 @@
 				AACE62922538F8DF00EB770D /* MyOrdersResponse.swift in Sources */,
 				AACE62902538F5E200EB770D /* ProfileResponse.swift in Sources */,
 				AAD2A317252B174100E11391 /* HomeVC.swift in Sources */,
-				AA3D2959252775380083FD54 /* CustomViews.swift in Sources */,
 				AAFA315D2551564E0080C50A /* OrdersVC+TableViewDelegate.swift in Sources */,
 				AA5DF08C254E0EDA0023A485 /* ReportsVC.swift in Sources */,
 				AAC9801425307AB900BC1911 /* DriversSpecialty.swift in Sources */,
+				1065DEDA25AF22D400627652 /* OrdersTableViewCell.swift in Sources */,
 				AAFDB532252F6670000512A7 /* AuthServices.swift in Sources */,
 				AA5DF090254E0EEB0023A485 /* ReportsVC+MainViewDelegate.swift in Sources */,
 				AA241A482563EFB5000BB035 /* SelectionVC.swift in Sources */,
@@ -656,6 +728,8 @@
 				AAFDB539252F681A000512A7 /* SharedData.swift in Sources */,
 				AAFA31592551550B0080C50A /* OrdersVC.swift in Sources */,
 				AAFDB545252F826F000512A7 /* DriverInfo.swift in Sources */,
+				103DADBD25AB2852008B6360 /* CancelationVC.swift in Sources */,
+				10CDDB4425B1EA34002AA6CE /* Distance.swift in Sources */,
 				AAE73CA8252A0B5B009584B9 /* Option.swift in Sources */,
 				AAE73CA4252A0957009584B9 /* ChooseCollectionViewCell.swift in Sources */,
 				AA5DF092254E10060023A485 /* ReportsResponse.swift in Sources */,
@@ -668,9 +742,11 @@
 				AA3D295D252775380083FD54 /* SetupPicker.swift in Sources */,
 				AAFDB537252F676E000512A7 /* APIs.swift in Sources */,
 				AAD2A31C252B25FA00E11391 /* IncomingOrderTableViewCell.swift in Sources */,
+				103DADB625AB2822008B6360 /* RaasonTableViewCell.swift in Sources */,
 				AAFDB535252F6744000512A7 /* LoginResponse.swift in Sources */,
 				AAC9801125307A2600BC1911 /* APIServices.swift in Sources */,
 				AA3D295B252775380083FD54 /* Drawer.swift in Sources */,
+				103A95C625953E250000F3C7 /* TripInfoVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,7 +916,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TheBest-iOS-Driver/The Best Driver.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 3Z2NC2D4N3;
 				INFOPLIST_FILE = "TheBest-iOS-Driver/Configurations/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
@@ -862,7 +938,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "TheBest-iOS-Driver/The Best Driver.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 3Z2NC2D4N3;
 				INFOPLIST_FILE = "TheBest-iOS-Driver/Configurations/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;

@@ -10,13 +10,13 @@ import Foundation
 
 // MARK: - ProfileResponse
 struct ProfileResponse: Codable {
-    let status: String
+    let status: Int
     let myProfile: MyProfile
-    let currnetTrip: CurrnetTrip?
+    let currnetTrip: MyTrip?
 
     enum CodingKeys: String, CodingKey {
         case status
-        case myProfile = "Driver"
+        case myProfile = "MyProfile"
         case currnetTrip = "CurrnetTrip"
     }
 }

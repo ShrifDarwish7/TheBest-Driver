@@ -136,6 +136,8 @@ class APIServices{
                 do{
                     
                     let json = JSON(data)
+                    print("trip here",json)
+                                                       
                     
                     if json["status"].intValue == 200{
                         let dataModel = try JSONDecoder().decode(TripByIDResponse.self, from: data)
@@ -153,6 +155,181 @@ class APIServices{
                 completed(nil)
             }
         }
+    }
+    
+    static func getDistance(_ parameters: [String: Any], completed: @escaping (Distance?)->Void){
+
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            
+            for (key,value) in parameters{
+                multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+            }
+            
+        }, to: URL(string: DISTANCE_API)!, method: .post, headers: SharedData.headers) { (encodingResult) in
+            
+            switch encodingResult{
+                
+            case .success(let uploadRequest,_,_):
+                
+                uploadRequest.responseData { (response) in
+                    
+                    switch response.result{
+                        
+                    case .success(let data):
+                        print(JSON(data))
+                        do{
+                            
+                            let dataModel = try JSONDecoder.init().decode(Distance.self, from: data)
+                            completed(dataModel)
+                            
+                        }catch let error{
+                            print("getDistanceParsErr",error)
+                            completed(nil)
+                        }
+                        
+                    case .failure(_):
+                        completed(nil)
+                    }
+                    
+                }
+                
+            case .failure(_):
+                completed(nil)
+            }
+            
+        }
+        
+    }
+    
+    static func postRidePrice(_ parameters: [String: Any], completed: @escaping (Bool)->Void){
+
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            
+            for (key,value) in parameters{
+                multipartFormData.append("\(value)".data(using: .utf8)!, withName: key)
+            }
+            
+        }, to: URL(string: RIDE_PRICE)!, method: .post, headers: SharedData.headers) { (encodingResult) in
+            
+            switch encodingResult{
+                
+            case .success(let uploadRequest,_,_):
+                
+                uploadRequest.responseData { (response) in
+                    
+                    switch response.result{
+                        
+                    case .success(let data):
+                        print(JSON(data))
+                        completed(true)
+                    case .failure(_):
+                        completed(false)
+                    }
+                    
+                }
+                
+            case .failure(_):
+                completed(false)
+            }
+            
+        }
+        
+    }
+    
+    static func startRide(_ id: String,_ trip: MyTrip, _ completed: @escaping (Bool)->Void){
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+        
+            multipartFormData.append("\(trip.fromLat ?? 0.0)".data(using: .utf8)!, withName: "from_lat")
+            multipartFormData.append("\(trip.fromLng ?? 0.0)".data(using: .utf8)!, withName: "from_lng")
+            multipartFormData.append("\(trip.toLat ?? 0.0)".data(using: .utf8)!, withName: "to_lat")
+            multipartFormData.append("\(trip.toLng ?? 0.0)".data(using: .utf8)!, withName: "to_lng")
+            multipartFormData.append("\(trip.clientID ?? 0)".data(using: .utf8)!, withName: "client_id")
+            
+        },to: START_RIDE_API + id, method: .post, headers: SharedData.headers) { (encodingResult) in
+            
+            switch encodingResult{
+            case .success(request: let req, streamingFromDisk: _, streamFileURL: _):
+                req.responseData { (response) in
+                    switch response.result{
+                    case .success(let data):
+                        let json = JSON(data)
+                        print(json)
+                        if json["code"].intValue == 105{
+                            completed(true)
+                        }else{
+                            completed(false)
+                        }
+                    case .failure(let error):
+                        print(error)
+                        completed(false)
+                    }
+                }
+            case .failure(_):
+                completed(false)
+            }
+            
+        }
+    }
+    
+    static func endRide(_ total: String,_ id: String, _ completed: @escaping (Bool)->Void){
+        
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            
+            multipartFormData.append(total.data(using: String.Encoding.utf8)!, withName: "total")
+            
+        }, to: URL(string: END_RIDE_API + id)!, method: .post, headers: SharedData.headers) { (encodingResult) in
+            
+            switch encodingResult{
+                
+            case .success(let uploadRequest,_,_):
+                
+                uploadRequest.responseData { (response) in
+                    
+                    switch response.result{
+                        
+                    case .success(let data):
+                        
+                        print(JSON(data))
+                        completed(true)
+                        
+//                        if JSON(data)["code"].intValue == 105{
+//                            completed(true)
+//                        }else{
+//                            completed(false)
+//                        }
+                        
+                    case .failure(_):
+                        
+                        completed(false)
+                        
+                    }
+                    
+                }
+                
+            case .failure(let error):
+                
+                print("error",error)
+                completed(false)
+                
+            }
+            
+        }
+        
+//        Alamofire.request(URL(string: END_RIDE_API + id)!, method: .get, parameters: nil, headers: SharedData.headers).responseData { (response) in
+//            switch response.result{
+//            case .success(let data):
+//                let json = JSON(data)
+//                if json["code"].intValue == 105{
+//                    completed(true)
+//                }else{
+//                    completed(false)
+//                }
+//            case .failure(let error):
+//                print(error)
+//                completed(false)
+//            }
+//        }
     }
     
     static func confirmEndRide(_ id: String, _ driverComment: String,_ status: String, completed: @escaping (Bool)->Void){
@@ -472,6 +649,8 @@ class APIServices{
         Alamofire.request(PROFILE_API, method: .get, parameters: nil, headers: SharedData.headers).responseData { (response) in
             switch response.result{
             case .success(let data):
+                print(JSON(data))
+                
                 do{
                     let dataModel = try JSONDecoder.init().decode(ProfileResponse.self, from: data)
                     completed(dataModel)
@@ -496,6 +675,8 @@ class APIServices{
                     case .success(let data):
                         do{
                             let json = try JSON(data: data)
+                            print(json)
+                            
                             if json["status"].stringValue == "200"{
                                 completed(true)
                             }else{
@@ -515,5 +696,19 @@ class APIServices{
             }
         }
     }
+    
+    static func cancelRide(_ completed: @escaping (Bool)->Void){
+        Alamofire.request(URL(string: CANCEL_RIDE)!, method: .get, parameters: nil, headers: SharedData.headers).responseData { (response) in
+            switch response.result{
+            case .success(_):
+                completed(true)
+            case .failure(let error):
+                print(error)
+                completed(false)
+            }
+        }
+    }
+    
+    
     
 }
